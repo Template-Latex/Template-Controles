@@ -21,6 +21,9 @@ _old/
 # Windows.
 desktop.ini
 
+# Se ignora pdf compilado
+
+
 # OSX.
 __MACOSX/
 .DS_Store
