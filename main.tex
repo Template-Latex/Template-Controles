@@ -1,0 +1,71 @@
+% Template:     Template Controles LaTeX
+% Documento:    Archivo principal
+% Versión:      1.0.0 (10/07/2017)
+% Codificación: UTF-8
+%
+% Autor: Pablo Pizarro R.
+%        Facultad de Ciencias Físicas y Matemáticas
+%        Universidad de Chile
+%        pablo.pizarro@ing.uchile.cl, ppizarror.com
+%
+% Sitio web del proyecto: [http://ppizarror.com/Template-Controles/]
+% Licencia MIT:           [https://opensource.org/licenses/MIT]
+
+% CREACIÓN DEL DOCUMENTO
+\documentclass[letterpaper,11pt]{article} % Articulo tamaño carta, 11pt
+\usepackage[utf8]{inputenc} % Codificación UTF-8
+
+% INFORMACIÓN DEL DOCUMENTO
+\def\tituloevaluacion {Título del Control}
+\def\indicacionevaluacion {\textbf{INDICACIÓN DEL CONTROL}} % Opcional
+
+\def\autordeldocumento {Nombre del autor}
+\def\nombredelcurso {Curso}
+\def\codigodelcurso {CO-1234}
+
+\def\nombreuniversidad {Universidad de Chile}
+\def\nombrefacultad {Facultad de Ciencias Físicas y Matemáticas}
+\def\departamentouniversidad {Departamento de la Universidad}
+\def\imagendepartamento {departamentos/fcfm}
+\def\imagendepartamentoescala {0.2}
+\def\localizacionuniversidad {Santiago, Chile}
+
+% EQUIPO DOCENTE
+\def\equipodocente {
+	\textbf{Prof: Profesor} \\
+	Auxiliares: Auxiliar 1, Auxiliar 2 \\
+	Ayudantes: Ayudante 1, Ayudante 2, Ayudante 3 \\
+}
+
+% CONFIGURACIONES
+\input{lib/config}
+
+% IMPORTACIÓN DE LIBRERÍAS
+\input{lib/imports}
+
+% IMPORTACIÓN DE FUNCIONES
+\input{lib/function/control}
+\input{lib/function/core}
+\input{lib/function/elements}
+\input{lib/function/equation}
+\input{lib/function/image}
+\input{lib/function/title}
+
+% IMPORTACIÓN DE ESTILOS
+\input{lib/styles}
+
+% CONFIGURACIÓN INICIAL DEL DOCUMENTO
+\input{lib/initconf}
+
+% INICIO DE LAS PÁGINAS
+\begin{document}
+
+% CONFIGURACIÓN DE PÁGINA Y ENCABEZADOS
+\input{lib/pageconf}
+
+% ======================= INICIO DEL DOCUMENTO =======================
+
+\input{lib/example.tex} % Ejemplo, se puede borrar la línea
+
+% FIN DEL DOCUMENTO
+\end{document}
