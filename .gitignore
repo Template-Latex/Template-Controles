@@ -22,7 +22,7 @@ _old/
 desktop.ini
 
 # Se ignora pdf compilado
-
+control.pdf
 
 # OSX.
 __MACOSX/
