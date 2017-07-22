@@ -1,4 +1,4 @@
-# Template de controles/exámenes en Latex
+# Template de Controles/Exámenes en Latex
 
 [![@ppizarror](http://latex.ppizarror.com/Template-Informe/resources/autor2.svg)](http://ppizarror.com)
 [![Licencia MiT](http://latex.ppizarror.com/Template-Informe/resources/Licencia-MIT-blue.svg)](https://opensource.org/licenses/MIT/)<br>
@@ -9,6 +9,10 @@
 [![Template-Controles](http://latex.ppizarror.com/Template-Informe/resources/templates/controles.svg)](https://github.com/Template-Latex/Template-Controles/)
 [![Template-Pautas](http://latex.ppizarror.com/Template-Informe/resources/templates/pauta.svg)](https://github.com/Template-Latex/Template-Pautas/)
 [![Template-Informes](http://latex.ppizarror.com/Template-Informe/resources/templates/informe.svg)](https://github.com/Template-Latex/Template-Informe/)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Template-Latex/Template-Informe/gh-pages/images/collage_control.png" alt="Informe" width="80%px" height="80%px"/>
+</p>
 
 Este corresponde a un template para confeccionar enunciados de controles/examenes en latex, contiene funciones básicas para agregar imágenes, párrafos, fórmulas, etc.
 
