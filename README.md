@@ -9,7 +9,7 @@
 [![Template-Auxiliares](http://latex.ppizarror.com/Template-Informe/resources/templates/auxiliares.svg)](https://github.com/Template-Latex/Template-Auxiliares/)
 [![Template-Controles](http://latex.ppizarror.com/Template-Informe/resources/templates/controles.svg)](https://github.com/Template-Latex/Template-Controles/)
 [![Template-Pautas](http://latex.ppizarror.com/Template-Informe/resources/templates/pauta.svg)](https://github.com/Template-Latex/Template-Pautas/)
-[![Template-Informes](http://latex.ppizarror.com/Template-Informe/resources/templates/informe.svg)](https://github.com/Template-Latex/Template-Informes/)
+[![Template-Informes](http://latex.ppizarror.com/Template-Informe/resources/templates/informe.svg)](https://github.com/Template-Latex/Template-Informe/)
 
 Este corresponde a un template para confeccionar enunciados de controles/examenes en latex, contiene funciones básicas para agregar imágenes, párrafos, fórmulas, etc.
 
