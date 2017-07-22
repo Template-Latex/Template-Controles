@@ -1,6 +1,6 @@
 % Template:     Template Controles LaTeX
 % Documento:    Configuración inicial del template
-% Versión:      1.0.6 (10/07/2017)
+% Versión:      1.0.8 (21/07/2017)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R.
@@ -43,13 +43,19 @@
 }{}
 
 % Se define metadata del pdf
+\ifthenelse{\equal{\cfgshowbookmarkmenu}{true}}{
+	\def\cdfpagemodepdf {UseOutlines}
+	}{
+	\def\cdfpagemodepdf {UseNone}
+}
 \hypersetup{
 	bookmarksopen={\cfgpdfbookmarkopen},
 	bookmarksopenlevel={\cfgbookmarksopenlevel},
 	bookmarkstype={toc},
 	pdfauthor={\autordeldocumento},
 	pdfcenterwindow={\cfgpdfcenterwindow},
-	pdfcreator={LaTeX, pdfLaTeX},
+	pdfcopyright={\cfgpdfcopyright},
+	pdfcreator={LaTeX},
 	pdfdisplaydoctitle={\cfgpdfdisplaydoctitle},
 	pdffitwindow={\cfgpdffitwindow},
 	pdfinfo={
@@ -62,28 +68,33 @@
 		Template.Autor.Nombre={Pablo Pizarro R.},
 		Template.Autor.Web={http://ppizarror.com/},
 		Template.Codificacion={UTF-8},
-		Template.Fecha={10/07/2017},
+		Template.Fecha={21/07/2017},
 		Template.Licencia.Tipo={MIT},
 		Template.Licencia.Web={https://opensource.org/licenses/MIT/},
 		Template.Nombre={Template-Controles},
 		Template.Tipo={Normal},
-		Template.Version.Dev={1.0.6-CTR/EXM-N},
-		Template.Version.Hash={9ED9052B5345353A2BE10D6E257F7001},
-		Template.Version.Release={1.0.6},
+		Template.Version.Dev={1.0.8-CTR/EXM-N},
+		Template.Version.Hash={BE9A0C22648CEFBB8BDB6CBFAC255D6B},
+		Template.Version.Release={1.0.8},
 		Template.Web.Dev={https://github.com/ppizarror/Template-Controles/},
 		Template.Web.Manual={http://ppizarror.com/Template-Controles/},
 		Universidad.Departamento={\departamentouniversidad},
 		Universidad.Nombre={\nombreuniversidad},
-		Universidad.Ubicacion={\localizacionuniversidad},
+		Universidad.Ubicacion={\localizacionuniversidad}
 	},
 	pdfkeywords={\nombreuniversidad, \codigodelcurso \nombredelcurso, \localizacionuniversidad},
-	pdfpagemode={UseOutlines},
-	pdfproducer={Template-Controles v1.0.6 | (Pablo Pizarro R.) ppizarror.com},
+	pdflang={es-CL},
+	pdfmenubar={\cfgpdfmenubar},
+	pdfpagelayout={SinglePage},
+	pdfpagemode={\cdfpagemodepdf},
+	pdfproducer={Template-Controles v1.0.8 | (Pablo Pizarro R.) ppizarror.com},
+	pdfremotestartview={FitH},
 	pdfstartpage={1},
 	pdfstartview={FitH},
 	pdfsubject={\tituloevaluacion},
 	pdftitle={\tituloevaluacion},
 	pdftoolbar={\cfgpdftoolbar},
+	pdftype={Text},
 	pdfview={FitH}
 }
 
