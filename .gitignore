@@ -34,5 +34,6 @@ __MACOSX/
 # Compilados python
 *.pyc
 
-# Otros
+# Compilados pdf
+control.pdf
 main.pdf
