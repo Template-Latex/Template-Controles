@@ -1,0 +1,4 @@
+# Se ignoran archivos compilados de latex
+*.aux
+*.log
+*.pdf
