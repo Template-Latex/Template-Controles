@@ -11,7 +11,7 @@
 [![Template-Informes](http://latex.ppizarror.com/Template-Informe/resources/templates/informe.svg)](https://github.com/Template-Latex/Template-Informe/)
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Template-Latex/Template-Informe/gh-pages/images/collage_control.png" alt="Control" width="70%px" height="70%px"/>
+  <img src="https://raw.githubusercontent.com/Template-Latex/Template-Informe/gh-pages/images/collage_control.png" alt="Control" width="70%px" />
 </p>
 
 Este corresponde a un template para confeccionar enunciados de controles/examenes en latex, contiene funciones básicas para agregar imágenes, párrafos, fórmulas, etc.
