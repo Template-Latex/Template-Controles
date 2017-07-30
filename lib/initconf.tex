@@ -73,8 +73,8 @@
 		Template.Licencia.Web={https://opensource.org/licenses/MIT/},
 		Template.Nombre={Template-Controles},
 		Template.Tipo={Normal},
-		Template.Version.Dev={1.1.3-2-CTR/EXM-N},
-		Template.Version.Hash={B26C92FBF16436C3E27B44FBEA5E84AE},
+		Template.Version.Dev={1.1.3-3-CTR/EXM-N},
+		Template.Version.Hash={3397F9C9CC1F369737967AC53896940F},
 		Template.Version.Release={1.1.3},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles/},
 		Template.Web.Manual={http://latex.ppizarror.com/Template-Controles/},
@@ -166,13 +166,13 @@
 		justification=centering
 	}
 }{
-\ifthenelse{\equal{\captionalignment}{left}}{ % Leyenda izq
+\ifthenelse{\equal{\captionalignment}{left}}{ % Leyenda alineada a la izquierda
 	\captionsetup{
 		justification=raggedright,
 		singlelinecheck=false
 	}
 }{
-\ifthenelse{\equal{\captionalignment}{right}}{ % Leyenda der
+\ifthenelse{\equal{\captionalignment}{right}}{ % Leyenda alineada a la derecha
 	\captionsetup{
 		justification=raggedleft,
 		singlelinecheck=false
@@ -186,25 +186,24 @@
 	\bibliographystyle{apa}
 	\setlength{\bibsep}{\natbibrefsep pt}
 }{
-	\ifthenelse{\equal{\stylecitereferences}{apacite}}{
-		\bibliographystyle{apacite}
-		\setlength{\bibitemsep}{\apaciterefsep pt}
-	}{
-		\ifthenelse{\equal{\stylecitereferences}{bibtex}}{
-			\bibliographystyle{apa}
-			\newlength{\bibitemsep}\setlength{\bibitemsep}{.2\baselineskip plus .05\baselineskip minus .05\baselineskip}
-			\newlength{\bibparskip}\setlength{\bibparskip}{0pt}
-			\let\oldthebibliography\thebibliography
-			\renewcommand\thebibliography[1]{
-				\oldthebibliography{#1}
-				\setlength{\parskip}{\bibitemsep}
-				\setlength{\itemsep}{\bibparskip}
-			}
-			\setlength{\bibitemsep}{\bibtexrefsep pt}
-		}{
-			\throwbadconfig{Estilo citas desconocido}{\stylecitereferences}{bibtex,apacite,natbib}
-		}
+\ifthenelse{\equal{\stylecitereferences}{apacite}}{
+	\bibliographystyle{apacite}
+	\setlength{\bibitemsep}{\apaciterefsep pt}
+}{
+\ifthenelse{\equal{\stylecitereferences}{bibtex}}{
+	\bibliographystyle{apa}
+	\newlength{\bibitemsep}
+	\setlength{\bibitemsep}{.2\baselineskip plus .05\baselineskip minus .05\baselineskip}
+	\newlength{\bibparskip}\setlength{\bibparskip}{0pt}
+	\let\oldthebibliography\thebibliography
+	\renewcommand\thebibliography[1]{
+		\oldthebibliography{#1}
+		\setlength{\parskip}{\bibitemsep}
+		\setlength{\itemsep}{\bibparskip}
 	}
+	\setlength{\bibitemsep}{\bibtexrefsep pt}
+}{
+	\throwbadconfig{Estilo citas desconocido}{\stylecitereferences}{bibtex,apacite,natbib}}}
 }
 \makeatletter
 \ifthenelse{\equal{\twocolumnreferences}{true}}{
