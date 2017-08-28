@@ -42,6 +42,11 @@
 	\def\indicacionevaluacion {}
 }{}
 
+% Se activan números en menú marcadores del pdf
+\ifthenelse{\equal{\cfgpdfsecnumbookmarks}{true}}{
+	\bookmarksetup{numbered}
+}{}
+
 % Se define metadata del pdf
 \ifthenelse{\equal{\cfgshowbookmarkmenu}{true}}{
 	\def\cdfpagemodepdf {UseOutlines}
@@ -73,8 +78,8 @@
 		Template.Licencia.Web={https://opensource.org/licenses/MIT/},
 		Template.Nombre={Template-Controles},
 		Template.Tipo={Normal},
-		Template.Version.Dev={1.1.8-CTR/EXM-N},
-		Template.Version.Hash={A611096BF0DB6668A2CEC2679FD40A0C},
+		Template.Version.Dev={1.1.8-1-CTR/EXM-N},
+		Template.Version.Hash={0735358FDE1FFDB3E2D5442D420ED518},
 		Template.Version.Release={1.1.8},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles/},
 		Template.Web.Manual={http://latex.ppizarror.com/Template-Controles/},
@@ -273,4 +278,4 @@
 \urlstyle{tt}
 
 % Se define la versión menor a compilar
-\pdfminorversion = \pdfcompileversion
+\pdfminorversion=\pdfcompileversion
