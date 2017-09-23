@@ -2,3 +2,6 @@
 *.aux
 *.log
 *.pdf
+
+# Se ignora carpeta .idea/
+.idea/
