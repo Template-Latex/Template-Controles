@@ -1,15 +1,19 @@
-# Template de controles/exámenes en latex
-
-Este corresponde a un template para confeccionar enunciados de controles/examenes en latex, contiene funciones básicas para agregar imágenes, párrafos, fórmulas, etc.
-
-## Manual de uso
-
-El manual de uso de las funciones opcionales se encuentra disponible en la página web del template de informes: <a href="http://ppizarror.com/Template-Informe/">Template-Informe</a>.
+<h1 align="center">
+  <a href="http://latex.ppizarror.com/Template-Controles/" title="Template-Controles">
+    <img alt="Template-Controles" src="http://latex.ppizarror.com/icon.png" width="200px" height="200px" />
+  </a>
+  <br /><br />
+  Template-Controles</h1>
+<p align="center">Página web del proyecto</p>
+<div align="center"><a href="http://ppizarror.com"><img alt="@ppizarror" src="http://ppizarror.com/badges/autor.svg" /></a>
+<a href="https://opensource.org/licenses/MIT/"><img alt="Licencia MIT" src="http://ppizarror.com/badges/licenciamit.svg" /></a>
+<br><a href="https://github.com/Template-Latex/Template-Auxiliares/"><img alt="Template-Auxiliares" src="http://latex.ppizarror.com/badges/auxiliares.svg" /></a>
+<a href="https://github.com/Template-Latex/Template-Controles/"><img alt="Template-Controles" src="http://latex.ppizarror.com/badges/controles.svg" /></a>
+<a href="https://github.com/Template-Latex/Template-Informe/"><img alt="Template-Informe" src="http://latex.ppizarror.com/badges/informe.svg" /></a>
+</div><br />
 
 ## Licencia
-Este proyecto está licenciado bajo la licencia MIT [https://opensource.org/licenses/MIT].
+Este proyecto está licenciado bajo la licencia MIT [https://opensource.org/licenses/MIT]
 
 ## Autor
-Pablo Pizarro, 2017.
-
-Si tienes alguna sugerencia envíame un correo a: [pablo.pizarro@ing.uchile.cl](mailto:pablo.pizarro@ing.uchile.cl), o sencillamente ten la libertad de enviar un _pull request_.
+<a href="http://ppizarror.com" title="ppizarror">Pablo Pizarro R.</a> | 2017
