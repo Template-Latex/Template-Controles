@@ -25,3 +25,8 @@ var href_pdf_version = '../Controles/Template-Controles v{0}.pdf';
 var href_resources_folder = 'http://latex.ppizarror.com/resources/';
 var stats_name = 'Controles';
 var update_download_counter = 'Template-Controles';
+
+// Declaración de funciones propias de cada template
+function afterDocumentReady() {}
+
+function afterJSONLoad() {}
