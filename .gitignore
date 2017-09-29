@@ -2,7 +2,7 @@
 *.aux
 *.log
 *.pdf
-
+*.synctex.gz
 
 # Se ignora carpeta .idea/
 .idea/
