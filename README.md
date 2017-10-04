@@ -20,6 +20,8 @@ Este corresponde a un template para confeccionar enunciados de controles/examene
 </p>
 
 ## Manual de uso
+
+[![Join the chat at https://gitter.im/Template-Latex/Template-Controles](https://badges.gitter.im/Template-Latex/Template-Controles.svg)](https://gitter.im/Template-Latex/Template-Controles?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 El manual de uso de las funciones opcionales se encuentra disponible en la página web del template de informes: <a href="http://ppizarror.com/Template-Informe/">Template-Informe</a>
 
 ## Licencia
