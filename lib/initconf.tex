@@ -1,6 +1,6 @@
 % Template:     Template Controles LaTeX
 % Documento:    Configuración inicial del template
-% Versión:      1.2.6 (14/10/2017)
+% Versión:      1.2.7 (04/11/2017)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R.
@@ -73,14 +73,14 @@
 		Template.Autor.Nombre={Pablo Pizarro R.},
 		Template.Autor.Web={http://ppizarror.com/},
 		Template.Codificacion={UTF-8},
-		Template.Fecha={14/10/2017},
+		Template.Fecha={04/11/2017},
 		Template.Licencia.Tipo={MIT},
 		Template.Licencia.Web={https://opensource.org/licenses/MIT/},
 		Template.Nombre={Template-Controles},
 		Template.Tipo={Normal},
-		Template.Version.Dev={1.2.6-CTR/EXM-N},
-		Template.Version.Hash={FC4C0B1C325E23363B1978E7873FDFE0},
-		Template.Version.Release={1.2.6},
+		Template.Version.Dev={1.2.7-CTR/EXM-N},
+		Template.Version.Hash={9F31BDAF9C85F5BD0A6ED2EFB27FAB94},
+		Template.Version.Release={1.2.7},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles/},
 		Template.Web.Manual={http://latex.ppizarror.com/Template-Controles/},
 		Universidad.Departamento={\departamentouniversidad},
@@ -92,7 +92,7 @@
 	pdfmenubar={\cfgpdfmenubar},
 	pdfpagelayout={\cfgpdfpagemode},
 	pdfpagemode={\cdfpagemodepdf},
-	pdfproducer={Template-Controles v1.2.6 | (Pablo Pizarro R.) ppizarror.com},
+	pdfproducer={Template-Controles v1.2.7 | (Pablo Pizarro R.) ppizarror.com},
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
@@ -264,6 +264,17 @@
 	{ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
 	{€}{{\EUR}}1 {£}{{\pounds}}1
 }
+
+% Reconfiguración de tamaño de páginas
+\makeatletter
+	\def\ifGm@preamble#1{\@firstofone}
+	\appto\restoregeometry{
+		\pdfpagewidth=\paperwidth
+		\pdfpageheight=\paperheight}
+	\apptocmd\newgeometry{
+		\pdfpagewidth=\paperwidth
+		\pdfpageheight=\paperheight}{}{}
+\makeatother
 
 % Configuración de hbox y vbox
 \hfuzz=200pt \vfuzz=200pt
