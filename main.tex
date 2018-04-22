@@ -1,9 +1,9 @@
 % Template:     Template Controles LaTeX
 % Documento:    Archivo principal
-% Versión:      1.2.9 (05/02/2018)
+% Versión:      1.3.3 (22/04/2018)
 % Codificación: UTF-8
 %
-% Autor: Pablo Pizarro R.
+% Autor: Pablo Pizarro R. @ppizarror
 %        Facultad de Ciencias Físicas y Matemáticas
 %        Universidad de Chile
 %        pablo.pizarro@ing.uchile.cl, ppizarror.com
@@ -41,31 +41,26 @@
 \input{lib/config}
 
 % IMPORTACIÓN DE LIBRERÍAS
-\input{lib/imports}
+\input{lib/env/imports}
 
 % IMPORTACIÓN DE FUNCIONES
-\input{lib/function/control}
-\input{lib/function/core}
-\input{lib/function/elements}
-\input{lib/function/equation}
-\input{lib/function/image}
-\input{lib/function/title}
+\input{lib/cmd/all}
 
 % IMPORTACIÓN DE ESTILOS
-\input{lib/styles}
+\input{lib/style/all}
 
 % CONFIGURACIÓN INICIAL DEL DOCUMENTO
-\input{lib/initconf}
+\input{lib/cfg/init}
 
 % INICIO DE LAS PÁGINAS
 \begin{document}
 
 % CONFIGURACIÓN DE PÁGINA Y ENCABEZADOS
-\input{lib/pageconf}
+\input{lib/cfg/page}
 
 % ======================= INICIO DEL DOCUMENTO =======================
 
-\input{lib/example.tex} % Ejemplo, se puede borrar
+\input{lib/etc/example} % Ejemplo, se puede borrar
 
 % FIN DEL DOCUMENTO
 \end{document}

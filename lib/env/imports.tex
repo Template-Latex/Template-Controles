@@ -1,9 +1,9 @@
 % Template:     Template Controles LaTeX
 % Documento:    Importación de librerías
-% Versión:      1.2.9 (05/02/2018)
+% Versión:      1.3.3 (22/04/2018)
 % Codificación: UTF-8
 %
-% Autor: Pablo Pizarro R.
+% Autor: Pablo Pizarro R. @ppizarror
 %        Facultad de Ciencias Físicas y Matemáticas
 %        Universidad de Chile
 %        pablo.pizarro@ing.uchile.cl, ppizarror.com
@@ -12,10 +12,15 @@
 % Licencia MIT: [https://opensource.org/licenses/MIT]
 
 % LIBRERÍAS IMPORTANTES
-\usepackage[spanish,es-nosectiondot,es-lcroman]{babel} % Idioma
+\usepackage[spanish,es-nosectiondot,es-lcroman]{babel} % Define el idioma
 \usepackage[T1]{fontenc} % Caracteres acentuados
-\usepackage{\fontdocument} % Tipografía del documento
 \usepackage{ifthen} % Manejo de condicionales
+\ifthenelse{\equal{\fontdocument}{arial}}{ % Tipografía del documento
+	\usepackage{helvet}
+	\renewcommand{\familydefault}{\sfdefault}
+}{
+	\usepackage{\fontdocument}
+}
 \ifthenelse{\equal{\showlinenumbers}{true}}{ % Muestra los números de línea
 	\usepackage[switch,columnwise,running]{lineno}}{
 }
@@ -42,6 +47,7 @@
 \usepackage{graphicx}      % Propiedades extra para los gráficos
 \usepackage{lipsum}        % Permite crear párrafos de prueba
 \usepackage{listings}      % Permite añadir código fuente
+\usepackage{listingsutf8}  % Acepta codificación UTF-8 en código fuente
 \usepackage{longtable}     % Permite utilizar tablas en varias hojas
 \usepackage{lscape}        % Modo página horizontal de página
 \usepackage{mathtools}     % Permite utilizar notaciones matemáticas
@@ -73,7 +79,7 @@
 \usepackage[usenames,dvipsnames]{xcolor} % Paquete de colores avanzado
 
 % LIBRERÍAS CONDICIONALES
-\ifthenelse{\equal{\showdotontitles}{true}}{ % Agrega puntos a los títulos/subtítulos
+\ifthenelse{\equal{\showdotontitles}{true}}{ % Agrega punto a títulos/subtítulos
 	\usepackage{secdot}
 	\sectiondot{subsection}
 	\sectiondot{subsubsection}}{
@@ -85,8 +91,7 @@
 		\usepackage{apacite}
 	}{
 		\ifthenelse{\equal{\stylecitereferences}{bibtex}}{ % Formato citas bibtex
-		}{
-		}
+		}{}
 	}
 }
 \usepackage{appendix} % Anexos/Apéndices
