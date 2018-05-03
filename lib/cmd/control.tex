@@ -1,6 +1,6 @@
 % Template:     Template Controles LaTeX
 % Documento:    Funciones exclusivas de Template-Controles
-% Versión:      2.0.5 (25/04/2018)
+% Versión:      2.0.6 (02/05/2018)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R. @ppizarror
@@ -94,35 +94,84 @@
 	\bookmarksetupnext{level=0}
 	\endgroup
 }
-\lstnewenvironment{sourcecode}[3][]{
-	\emptyvarerr{\equationresize}{#2}{Estilo no definido}
+\lstnewenvironment{sourcecodep}[4][]{
+	\emptyvarerr{sourcecodep}{#2}{Estilo no definido}
+	\checkvalidsourcecodestyle{#2}
 	\ifthenelse{\equal{\showlinenumbers}{true}}{
 		\rightlinenumbers}{
 	}
-	\ifthenelse{\equal{#2}{c}}{}{
-	\ifthenelse{\equal{#2}{cpp}}{}{
-	\ifthenelse{\equal{#2}{csharp}}{}{
-	\ifthenelse{\equal{#2}{docker}}{}{
-	\ifthenelse{\equal{#2}{html5}}{}{
-	\ifthenelse{\equal{#2}{java}}{}{
-	\ifthenelse{\equal{#2}{js}}{}{
-	\ifthenelse{\equal{#2}{json}}{}{
-	\ifthenelse{\equal{#2}{matlab}}{}{
-	\ifthenelse{\equal{#2}{latex}}{}{
-	\ifthenelse{\equal{#2}{perl}}{}{
-	\ifthenelse{\equal{#2}{php}}{}{
-	\ifthenelse{\equal{#2}{python}}{}{
-	\ifthenelse{\equal{#2}{ruby}}{}{
-	\ifthenelse{\equal{#2}{sql}}{}{
-	\ifthenelse{\equal{#2}{xml}}{}{
-		\def\sourcecodestyle {#2}
-		\throwbadconfig{Estilo de codigo desconocido}{\sourcecodestyle}{c,cpp,csharp,docker,html5,java,js,json,matlab,latex,perl,php,python,ruby,sql,xml}
-	}}}}}}}}}}}}}}}}
+	\ifthenelse{\equal{\codecaptiontop}{true}}{
+		\ifx\hfuzz#4\hfuzz
+			\ifx\hfuzz#3\hfuzz
+				\lstset{
+					style=#2
+				}
+			\else
+				\lstset{
+					style=#2,
+					#3
+				}
+			\fi
+		\else
+			\ifx\hfuzz#3\hfuzz
+				\lstset{
+					caption={#4 #1},
+					captionpos=t,
+					style=#2
+				}
+			\else
+				\lstset{
+					caption={#4 #1},
+					captionpos=t,
+					style=#2,
+					#3
+				}
+			\fi
+		\fi
+	}{
+		\ifx\hfuzz#4\hfuzz
+			\ifx\hfuzz#3\hfuzz
+				\lstset{
+					style=#2
+				}
+			\else
+				\lstset{
+					style=#2,
+					#3
+				}
+			\fi
+		\else
+			\ifx\hfuzz#3\hfuzz
+				\lstset{
+					caption={#4 #1},
+					captionpos=b,
+					style=#2
+				}
+			\else
+				\lstset{
+					caption={#4 #1},
+					captionpos=b,
+					style=#2,
+					#3
+				}
+			\fi
+		\fi	
+	}
+}{
+	\ifthenelse{\equal{\showlinenumbers}{true}}{
+		\leftlinenumbers}{
+	}
+}
+\lstnewenvironment{sourcecode}[3][]{
+	\emptyvarerr{\equationresize}{#2}{Estilo no definido}
+	\checkvalidsourcecodestyle{#2}
+	\ifthenelse{\equal{\showlinenumbers}{true}}{
+		\rightlinenumbers}{
+	}
 	\ifthenelse{\equal{\codecaptiontop}{true}}{
 		\ifx\hfuzz#3\hfuzz
 			\lstset{
-				style=#2,
-				captionpos=t
+				style=#2
 			}
 		\else
 			\lstset{
@@ -134,8 +183,7 @@
 	}{
 		\ifx\hfuzz#3\hfuzz
 			\lstset{
-				style=#2,
-				captionpos=b
+				style=#2
 			}
 		\else
 			\lstset{
