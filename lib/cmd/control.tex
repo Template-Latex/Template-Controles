@@ -1,6 +1,6 @@
 % Template:     Template Controles LaTeX
 % Documento:    Funciones exclusivas de Template-Controles
-% Versión:      2.0.8 (09/05/2018)
+% Versión:      2.1.1 (15/05/2018)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R. @ppizarror
@@ -197,6 +197,16 @@
 	\ifthenelse{\equal{\showlinenumbers}{true}}{
 		\leftlinenumbers}{
 	}
+}
+\newenvironment{itemizebf}[1][]{
+	\begin{itemize}[font=\bfseries,#1]
+	}{
+	\end{itemize}
+}
+\newenvironment{enumeratebf}[1][]{
+	\begin{enumerate}[font=\bfseries,#1]
+	}{
+	\end{enumerate}
 }
 \newcommand{\newquestionthemed}[2]{
 	\emptyvarerr{\newquestion}{#1}{Titulo pregunta no definido}

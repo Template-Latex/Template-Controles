@@ -1,6 +1,6 @@
 % Template:     Template Controles LaTeX
 % Documento:    Configuración inicial del template
-% Versión:      2.0.8 (09/05/2018)
+% Versión:      2.1.1 (15/05/2018)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R. @ppizarror
@@ -65,14 +65,15 @@
 		Template.Autor.Nombre={Pablo Pizarro R.},
 		Template.Autor.Web={http://ppizarror.com/},
 		Template.Codificacion={UTF-8},
-		Template.Fecha={09/05/2018},
+		Template.Fecha={15/05/2018},
+		Template.Latex.Compilador={pdflatex},
 		Template.Licencia.Tipo={MIT},
 		Template.Licencia.Web={https://opensource.org/licenses/MIT/},
 		Template.Nombre={Template-Controles},
 		Template.Tipo={Normal},
-		Template.Version.Dev={2.0.8-CTR/EXM-N},
-		Template.Version.Hash={C14BADD96472F20DA9C7DDAE5B99FAE7},
-		Template.Version.Release={2.0.8},
+		Template.Version.Dev={2.1.1-CTR/EXM-N},
+		Template.Version.Hash={31A38A3C1C2C04C821CF2CCF0D08E959},
+		Template.Version.Release={2.1.1},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles/},
 		Template.Web.Manual={http://latex.ppizarror.com/Template-Controles/},
 		Universidad.Departamento={\departamentouniversidad},
@@ -84,7 +85,7 @@
 	pdfmenubar={\cfgpdfmenubar},
 	pdfpagelayout={\cfgpdfpagemode},
 	pdfpagemode={\cdfpagemodepdf},
-	pdfproducer={Template-Controles v2.0.8 | (Pablo Pizarro R.) ppizarror.com},
+	pdfproducer={Template-Controles v2.1.1 | (Pablo Pizarro R.) ppizarror.com},
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
@@ -224,6 +225,15 @@
 		\endlist\end{multicols}}}{}
 \makeatother
 \patchcmd{\appendices}{\quad}{\sectionappendixlastchar\quad}{}{}
+\begingroup
+	\makeatletter
+	\let\newcounter\@gobble\let\setcounter\@gobbletwo
+	\globaldefs\@ne\let\c@loldepth\@ne
+	\newlistof{listings}{lol}{\lstlistlistingname}
+	\newlistentry{lstlisting}{lol}{0}
+\def\cftlstlistingindent {1.5em}
+	\makeatother
+\endgroup
 \makeatletter
 	\def\ifGm@preamble#1{\@firstofone}
 	\appto\restoregeometry{
