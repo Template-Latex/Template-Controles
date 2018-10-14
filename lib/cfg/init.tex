@@ -1,6 +1,6 @@
 % Template:     Template Controles LaTeX
 % Documento:    Configuración inicial del template
-% Versión:      2.2.6 (01/10/2018)
+% Versión:      3.0.0 (13/10/2018)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R. @ppizarror
@@ -11,23 +11,23 @@
 % Sitio web:    [http://latex.ppizarror.com/Template-Controles/]
 % Licencia MIT: [https://opensource.org/licenses/MIT]
 
-\checkvardefined{\tituloevaluacion}
 \checkvardefined{\autordeldocumento}
-\checkvardefined{\nombredelcurso}
 \checkvardefined{\codigodelcurso}
-\checkvardefined{\nombreuniversidad}
-\checkvardefined{\nombrefacultad}
 \checkvardefined{\departamentouniversidad}
 \checkvardefined{\localizacionuniversidad}
+\checkvardefined{\nombredelcurso}
+\checkvardefined{\nombrefacultad}
+\checkvardefined{\nombreuniversidad}
+\checkvardefined{\tituloevaluacion}
 \makeatletter
-	\g@addto@macro\tituloevaluacion\xspace
 	\g@addto@macro\autordeldocumento\xspace
-	\g@addto@macro\nombredelcurso\xspace
 	\g@addto@macro\codigodelcurso\xspace
-	\g@addto@macro\nombreuniversidad\xspace
-	\g@addto@macro\nombrefacultad\xspace
 	\g@addto@macro\departamentouniversidad\xspace
 	\g@addto@macro\localizacionuniversidad\xspace
+	\g@addto@macro\nombredelcurso\xspace
+	\g@addto@macro\nombrefacultad\xspace
+	\g@addto@macro\nombreuniversidad\xspace
+	\g@addto@macro\tituloevaluacion\xspace
 \makeatother
 \ifthenelse{\isundefined{\equipodocente}}{
 	\errmessage{LaTeX Warning: Se borro la variable \noexpand\equipodocente, creando una vacia}
@@ -65,15 +65,15 @@
 		Template.Autor.Nombre={Pablo Pizarro R.},
 		Template.Autor.Web={http://ppizarror.com/},
 		Template.Codificacion={UTF-8},
-		Template.Fecha={01/10/2018},
+		Template.Fecha={13/10/2018},
 		Template.Latex.Compilador={pdflatex},
 		Template.Licencia.Tipo={MIT},
 		Template.Licencia.Web={https://opensource.org/licenses/MIT/},
 		Template.Nombre={Template-Controles},
 		Template.Tipo={Normal},
-		Template.Version.Dev={2.2.6-CTR/EXM-N},
-		Template.Version.Hash={6B164A8A5413AA37425B58C602285381},
-		Template.Version.Release={2.2.6},
+		Template.Version.Dev={3.0.0-alpha-1-CTR/EXM-N},
+		Template.Version.Hash={52CC981E69BD606F30E4801B0FBF777C},
+		Template.Version.Release={3.0.0},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles/},
 		Template.Web.Manual={http://latex.ppizarror.com/Template-Controles/},
 		Universidad.Departamento={\departamentouniversidad},
@@ -85,7 +85,7 @@
 	pdfmenubar={\cfgpdfmenubar},
 	pdfpagelayout={\cfgpdfpagemode},
 	pdfpagemode={\cdfpagemodepdf},
-	pdfproducer={Template-Controles v2.2.6 | (Pablo Pizarro R.) ppizarror.com},
+	pdfproducer={Template-Controles v3.0.0 | (Pablo Pizarro R.) ppizarror.com},
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
@@ -119,7 +119,7 @@
 		urlbordercolor=\urlcolor
 	}
 }{
-	\hypersetup{
+\hypersetup{
 		hidelinks,
 		colorlinks=true,
 		citecolor=\numcitecolor,
@@ -156,8 +156,8 @@
 }
 \ifthenelse{\equal{\captionalignment}{justified}}{
 	\captionsetup{
-		justification=justified,
-		format=plain
+		format=plain,
+		justification=justified
 	}
 }{
 \ifthenelse{\equal{\captionalignment}{centered}}{
@@ -253,22 +253,22 @@
 \urlstyle{tt}
 \pdfminorversion=\pdfcompileversion
 \setcounter{secnumdepth}{4}
-\titleclass{\subsubsubsection}{straight}[\subsection]
 \newcounter{subsubsubsection}[subsubsection]
+\titleclass{\subsubsubsection}{straight}[\subsection]
 \ifthenelse{\equal{\showdotontitles}{true}}{
-	\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}.}
-	\renewcommand\theparagraph{\thesubsubsubsection.\arabic{paragraph}.}
+	\renewcommand{\thesubsubsubsection}{\thesubsubsection.\arabic{subsubsubsection}.}
+	\renewcommand{\theparagraph}{\thesubsubsubsection.\arabic{paragraph}.}
 }{
-	\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
-	\renewcommand\theparagraph{\thesubsubsubsection.\arabic{paragraph}}
+	\renewcommand{\thesubsubsubsection}{\thesubsubsection.\arabic{subsubsubsection}}
+	\renewcommand{\theparagraph}{\thesubsubsubsection.\arabic{paragraph}}
 }
 \makeatletter
 	\renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}
-		{3.25ex \@plus1ex \@minus.2ex}
+		{3.25ex \@plus 1ex \@minus .2ex}
 		{-1em}
 		{\normalfont\normalsize\bfseries}}
 	\renewcommand\subparagraph{\@startsection{subparagraph}{6}{\parindent}
-		{3.25ex \@plus1ex \@minus .2ex}
+		{3.25ex \@plus 1ex \@minus .2ex}
 		{-1em}
 		{\normalfont\normalsize\bfseries}}
 	\def\toclevel@subsubsubsection{4}
@@ -279,4 +279,3 @@
 	\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
 \makeatother
 \setcounter{tocdepth}{1}
-
