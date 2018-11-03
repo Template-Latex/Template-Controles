@@ -1,6 +1,6 @@
 % Template:     Template Controles LaTeX
 % Documento:    Configuración inicial del template
-% Versión:      3.0.2 (27/10/2018)
+% Versión:      3.0.3 (03/11/2018)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R. @ppizarror
@@ -65,15 +65,15 @@
 		Template.Autor.Nombre={Pablo Pizarro R.},
 		Template.Autor.Web={https://ppizarror.com/},
 		Template.Codificacion={UTF-8},
-		Template.Fecha={27/10/2018},
+		Template.Fecha={03/11/2018},
 		Template.Latex.Compilador={pdflatex},
 		Template.Licencia.Tipo={MIT},
 		Template.Licencia.Web={https://opensource.org/licenses/MIT/},
 		Template.Nombre={Template-Controles},
 		Template.Tipo={Normal},
-		Template.Version.Dev={3.0.2-CTR/EXM-N},
-		Template.Version.Hash={ACFECE08D6DE29F69EDC6B9C42D1D6EC},
-		Template.Version.Release={3.0.2},
+		Template.Version.Dev={3.0.3-CTR/EXM-N},
+		Template.Version.Hash={E9C35133BCE7C033E3627E5F26816000},
+		Template.Version.Release={3.0.3},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles/},
 		Template.Web.Manual={https://latex.ppizarror.com/Template-Controles/},
 		Universidad.Departamento={\departamentouniversidad},
@@ -85,7 +85,7 @@
 	pdfmenubar={\cfgpdfmenubar},
 	pdfpagelayout={\cfgpdfpagemode},
 	pdfpagemode={\cdfpagemodepdf},
-	pdfproducer={Template-Controles v3.0.2 | (Pablo Pizarro R.) ppizarror.com},
+	pdfproducer={Template-Controles v3.0.3 | (Pablo Pizarro R.) ppizarror.com},
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
@@ -98,69 +98,12 @@
 \newcounter{templatepagecounter}
 \renewcommand{\baselinestretch}{\defaultinterline}
 \setlength{\headheight}{64 pt}
-\setcounter{MaxMatrixCols}{20}
-\setlength{\footnotemargin}{4 mm}
+\setlength{\footnotemargin}{\marginfootnote pt}
 \setlength{\columnsep}{\columnsepwidth em}
 \ifthenelse{\equal{\showlinenumbers}{true}}{
-	\setlength{\linenumbersep}{0.22cm}
+	\setlength{\linenumbersep}{0.50cm}
 	\renewcommand\linenumberfont{\normalfont\tiny\color{\linenumbercolor}}
 	}{
-}
-\ifthenelse{\equal{\objectmarginstyle}{small}}{
-\def\marginalignbottom {-0.6}
-\def\marginaligncaptionbottom {0}
-\def\marginaligncaptiontop {-0.6}
-\def\marginaligntop {-0.6}
-\def\marginbottomimages {-0.3}
-\def\marginequationbottom {-0.4}
-\def\marginequationcaptionbottom {0.05}
-\def\marginequationcaptiontop {-0.65}
-\def\marginequationtop {-0.25}
-\def\marginfloatimages {-13.0}
-\def\margingatherbottom {-0.6}
-\def\margingathercaptionbottom {0}
-\def\margingathercaptiontop {-0.77}
-\def\margingathertop {-0.6}
-\def\marginrightmultimage {0.1}
-\def\margintopimages {-0.2}
-}{
-\ifthenelse{\equal{\objectmarginstyle}{normal}}{
-\def\marginalignbottom {-0.4}
-\def\marginaligncaptionbottom {0.05}
-\def\marginaligncaptiontop {-0.6}
-\def\marginaligntop {-0.4}
-\def\marginbottomimages {-0.2}
-\def\marginequationbottom {-0.26}
-\def\marginequationcaptionbottom {0.05}
-\def\marginequationcaptiontop {-0.65}
-\def\marginequationtop {-0.1}
-\def\marginfloatimages {-13.0}
-\def\margingatherbottom {-0.4}
-\def\margingathercaptionbottom {0.05}
-\def\margingathercaptiontop {-0.77}
-\def\margingathertop {-0.4}
-\def\marginrightmultimage {0.1}
-\def\margintopimages {0.0}
-}{
-\ifthenelse{\equal{\objectmarginstyle}{large}}{
-\def\marginalignbottom {-0.25}
-\def\marginaligncaptionbottom {0.05}
-\def\marginaligncaptiontop {-0.55}
-\def\marginaligntop {-0.25}
-\def\marginbottomimages {-0.05}
-\def\marginequationbottom {-0.10}
-\def\marginequationcaptionbottom {0.05}
-\def\marginequationcaptiontop {-0.55}
-\def\marginequationtop {0.0}
-\def\marginfloatimages {-13.0}
-\def\margingatherbottom {-0.25}
-\def\margingathercaptionbottom {0.05}
-\def\margingathercaptiontop {-0.55}
-\def\margingathertop {-0.25}
-\def\marginrightmultimage {0.1}
-\def\margintopimages {0.2}
-}{
-	\throwbadconfig{Estilo margen objeto desconocido}{\objectmarginstyle}{small,normal,large}}}
 }
 \floatplacement{figure}{\imagedefaultplacement}
 \floatplacement{table}{\tabledefaultplacement}
@@ -335,3 +278,41 @@
 	\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
 \makeatother
 \setcounter{tocdepth}{1}
+\ifthenelse{\equal{\footnoterestart}{none}}{
+}{
+\ifthenelse{\equal{\footnoterestart}{sec}}{
+	\counterwithin*{footnote}{section}
+}{
+\ifthenelse{\equal{\footnoterestart}{ssec}}{
+	\counterwithin*{footnote}{subsection}
+}{
+\ifthenelse{\equal{\footnoterestart}{sssec}}{
+	\counterwithin*{footnote}{subsubsection}
+}{
+\ifthenelse{\equal{\footnoterestart}{ssssec}}{
+	\counterwithin*{footnote}{subsubsubsection}
+}{
+\ifthenelse{\equal{\footnoterestart}{page}}{
+	\counterwithin*{footnote}{page}
+}{
+	\throwbadconfig{Formato reinicio numero footnote desconocido}{\footnoterestart}{none,page,sec,ssec,sssec,ssssec}}}}}}
+}
+\ifthenelse{\equal{\equationrestart}{none}}{
+}{
+\ifthenelse{\equal{\equationrestart}{sec}}{
+	\counterwithin*{equation}{section}
+}{
+\ifthenelse{\equal{\equationrestart}{ssec}}{
+	\counterwithin*{equation}{subsection}
+}{
+\ifthenelse{\equal{\equationrestart}{sssec}}{
+	\counterwithin*{equation}{subsubsection}
+}{
+\ifthenelse{\equal{\equationrestart}{ssssec}}{
+	\counterwithin*{equation}{subsubsubsection}
+}{
+\ifthenelse{\equal{\equationrestart}{page}}{
+	\counterwithin*{equation}{page}
+}{
+	\throwbadconfig{Formato reinicio numero ecuacion desconocido}{\footnoterestart}{none,page,sec,ssec,sssec,ssssec}}}}}}
+}
