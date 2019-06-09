@@ -1,6 +1,6 @@
 % Template:     Template Controles LaTeX
 % Documento:    Configuración inicial del template
-% Versión:      3.1.5 (05/06/2019)
+% Versión:      3.2.0 (09/06/2019)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R. @ppizarror
@@ -54,6 +54,7 @@
 	pdfcopyright={\cfgpdfcopyright},
 	pdfcreator={LaTeX},
 	pdfdisplaydoctitle={\cfgpdfdisplaydoctitle},
+	pdfencoding=unicode,
 	pdffitwindow={\cfgpdffitwindow},
 	pdfinfo={
 		Curso.Codigo={\codigodelcurso},
@@ -65,15 +66,15 @@
 		Template.Autor.Nombre={Pablo Pizarro R.},
 		Template.Autor.Web={https://ppizarror.com/},
 		Template.Codificacion={UTF-8},
-		Template.Fecha={05/06/2019},
+		Template.Fecha={09/06/2019},
 		Template.Latex.Compilador={pdflatex},
 		Template.Licencia.Tipo={MIT},
 		Template.Licencia.Web={https://opensource.org/licenses/MIT/},
 		Template.Nombre={Template-Controles},
 		Template.Tipo={Normal},
-		Template.Version.Dev={3.1.5-CTR/EXM-N},
-		Template.Version.Hash={0D4B23F96DEF8730B9708480ED1C1E80},
-		Template.Version.Release={3.1.5},
+		Template.Version.Dev={3.2.0-CTR/EXM-N},
+		Template.Version.Hash={5D0432FB4F346681ADFD2F38F647BCB0},
+		Template.Version.Release={3.2.0},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles/},
 		Template.Web.Manual={https://latex.ppizarror.com/Template-Controles/},
 		Universidad.Departamento={\departamentouniversidad},
@@ -85,7 +86,7 @@
 	pdfmenubar={\cfgpdfmenubar},
 	pdfpagelayout={\cfgpdfpagemode},
 	pdfpagemode={\cdfpagemodepdf},
-	pdfproducer={Template-Controles v3.1.5 | (Pablo Pizarro R.) ppizarror.com},
+	pdfproducer={Template-Controles v3.2.0 | (Pablo Pizarro R.) ppizarror.com},
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
@@ -265,7 +266,11 @@
 \titlespacing{\subsection}{0pt}{15pt}{10pt}
 \ttfamily \hyphenchar\the\font=`\-
 \urlstyle{tt}
+\pdfcompresslevel=\pdfcompilecompression
+\pdfdecimaldigits=2
+\pdfinclusionerrorlevel=0
 \pdfminorversion=\pdfcompileversion
+\pdfobjcompresslevel=\pdfcompileobjcompression
 \setcounter{secnumdepth}{4}
 \newcounter{subsubsubsection}[subsubsection]
 \titleclass{\subsubsubsection}{straight}[\subsection]
