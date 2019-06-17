@@ -1,6 +1,6 @@
 % Template:     Template Controles LaTeX
 % Documento:    Configuración inicial del template
-% Versión:      3.2.0 (09/06/2019)
+% Versión:      3.2.1 (16/06/2019)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R. @ppizarror
@@ -66,15 +66,15 @@
 		Template.Autor.Nombre={Pablo Pizarro R.},
 		Template.Autor.Web={https://ppizarror.com/},
 		Template.Codificacion={UTF-8},
-		Template.Fecha={09/06/2019},
+		Template.Fecha={16/06/2019},
 		Template.Latex.Compilador={pdflatex},
 		Template.Licencia.Tipo={MIT},
 		Template.Licencia.Web={https://opensource.org/licenses/MIT/},
 		Template.Nombre={Template-Controles},
 		Template.Tipo={Normal},
-		Template.Version.Dev={3.2.0-CTR/EXM-N},
-		Template.Version.Hash={5D0432FB4F346681ADFD2F38F647BCB0},
-		Template.Version.Release={3.2.0},
+		Template.Version.Dev={3.2.1-CTR/EXM-N},
+		Template.Version.Hash={C94A817268ED5AF37A25F70E4C8A8A40},
+		Template.Version.Release={3.2.1},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles/},
 		Template.Web.Manual={https://latex.ppizarror.com/Template-Controles/},
 		Universidad.Departamento={\departamentouniversidad},
@@ -86,7 +86,7 @@
 	pdfmenubar={\cfgpdfmenubar},
 	pdfpagelayout={\cfgpdfpagemode},
 	pdfpagemode={\cdfpagemodepdf},
-	pdfproducer={Template-Controles v3.2.0 | (Pablo Pizarro R.) ppizarror.com},
+	pdfproducer={Template-Controles v3.2.1 | (Pablo Pizarro R.) ppizarror.com},
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
@@ -94,7 +94,7 @@
 	pdftitle={\tituloevaluacion},
 	pdftoolbar={\cfgpdftoolbar}
 }
-\graphicspath{{./\defaultimagefolder}}
+\graphicspath{{./\defaultimagefolder}{./\defaultimagefolder/departamentos/}}
 \newcounter{templatepagecounter}
 \renewcommand{\baselinestretch}{\defaultinterline}
 \setlength{\headheight}{64 pt}
@@ -261,6 +261,10 @@
 \vfuzz=200pt
 \hbadness=\maxdimen
 \vbadness=\maxdimen
+\makeatletter
+\preto\tabular{\global\rownum=\z@}
+\preto\tabularx{\global\rownum=\z@}
+\makeatother
 \strictpagecheck
 \titlespacing{\section}{0pt}{20pt}{10pt}
 \titlespacing{\subsection}{0pt}{15pt}{10pt}
