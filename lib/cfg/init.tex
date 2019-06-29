@@ -1,6 +1,6 @@
 % Template:     Template Controles LaTeX
 % Documento:    Configuración inicial del template
-% Versión:      3.2.2 (23/06/2019)
+% Versión:      3.2.3 (29/06/2019)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R. @ppizarror
@@ -66,15 +66,15 @@
 		Template.Autor.Nombre={Pablo Pizarro R.},
 		Template.Autor.Web={https://ppizarror.com/},
 		Template.Codificacion={UTF-8},
-		Template.Fecha={23/06/2019},
+		Template.Fecha={29/06/2019},
 		Template.Latex.Compilador={pdflatex},
 		Template.Licencia.Tipo={MIT},
 		Template.Licencia.Web={https://opensource.org/licenses/MIT/},
 		Template.Nombre={Template-Controles},
 		Template.Tipo={Normal},
-		Template.Version.Dev={3.2.2-1-CTR/EXM-N},
-		Template.Version.Hash={136A629CE377A56447C9FAF940920407},
-		Template.Version.Release={3.2.2},
+		Template.Version.Dev={3.2.3-CTR/EXM-N},
+		Template.Version.Hash={F989B07D4D12A7DB6FCEFE315C73A183},
+		Template.Version.Release={3.2.3},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles/},
 		Template.Web.Manual={https://latex.ppizarror.com/Template-Controles/},
 		Universidad.Departamento={\departamentouniversidad},
@@ -86,7 +86,7 @@
 	pdfmenubar={\cfgpdfmenubar},
 	pdfpagelayout={\cfgpdfpagemode},
 	pdfpagemode={\cdfpagemodepdf},
-	pdfproducer={Template-Controles v3.2.2 | (Pablo Pizarro R.) ppizarror.com},
+	pdfproducer={Template-Controles v3.2.3 | (Pablo Pizarro R.) ppizarror.com},
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
@@ -134,6 +134,10 @@
 	\renewcommand{\captiontextbold}{bf}}{
 	\renewcommand{\captiontextbold}{}
 }
+\ifthenelse{\equal{\captiontextsubnumbold}{true}}{
+	\renewcommand{\captiontextsubnumbold}{bf}}{
+	\renewcommand{\captiontextsubnumbold}{}
+}
 \captionsetup{
 	labelfont={color=\captioncolor, \captiontextbold},
 	labelformat={\captionlabelformat},
@@ -142,14 +146,14 @@
 	singlelinecheck=on
 }
 \captionsetup*[subfigure]{
-	labelfont={color=\captioncolor, \captiontextbold},
+	labelfont={color=\captioncolor, \captiontextsubnumbold},
 	labelformat={\subcaptionlabelformat},
 	labelsep={\subcaptionlabelsep},
 	textfont={color=\captiontextcolor},
 	singlelinecheck=on
 }
 \captionsetup*[subtable]{
-	labelfont={color=\captioncolor, \captiontextbold},
+	labelfont={color=\captioncolor, \captiontextsubnumbold},
 	labelformat={\subcaptionlabelformat},
 	labelsep={\subcaptionlabelsep},
 	textfont={color=\captiontextcolor},
@@ -346,3 +350,4 @@
 }{
 	\throwbadconfig{Formato reinicio numero ecuacion desconocido}{\footnoterestart}{none,page,sec,ssec,sssec,ssssec}}}}}}
 }
+\unaccentedoperators
