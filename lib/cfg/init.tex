@@ -1,6 +1,6 @@
 % Template:     Template Controles LaTeX
 % Documento:    Configuración inicial del template
-% Versión:      3.2.3 (29/06/2019)
+% Versión:      3.2.4 (04/07/2019)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R. @ppizarror
@@ -66,15 +66,15 @@
 		Template.Autor.Nombre={Pablo Pizarro R.},
 		Template.Autor.Web={https://ppizarror.com/},
 		Template.Codificacion={UTF-8},
-		Template.Fecha={29/06/2019},
+		Template.Fecha={04/07/2019},
 		Template.Latex.Compilador={pdflatex},
 		Template.Licencia.Tipo={MIT},
 		Template.Licencia.Web={https://opensource.org/licenses/MIT/},
 		Template.Nombre={Template-Controles},
 		Template.Tipo={Normal},
-		Template.Version.Dev={3.2.3-1-CTR/EXM-N},
-		Template.Version.Hash={864FA010D48A11A43745AA85F09F2948},
-		Template.Version.Release={3.2.3},
+		Template.Version.Dev={3.2.4-CTR/EXM-N},
+		Template.Version.Hash={0CB62B4836C7449A3054310955B09027},
+		Template.Version.Release={3.2.4},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles/},
 		Template.Web.Manual={https://latex.ppizarror.com/Template-Controles/},
 		Universidad.Departamento={\departamentouniversidad},
@@ -86,7 +86,7 @@
 	pdfmenubar={\cfgpdfmenubar},
 	pdfpagelayout={\cfgpdfpagemode},
 	pdfpagemode={\cdfpagemodepdf},
-	pdfproducer={Template-Controles v3.2.3 | (Pablo Pizarro R.) ppizarror.com},
+	pdfproducer={Template-Controles v3.2.4 | (Pablo Pizarro R.) ppizarror.com},
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
@@ -265,6 +265,7 @@
 \vfuzz=200pt
 \hbadness=\maxdimen
 \vbadness=\maxdimen
+\sloppy
 \makeatletter
 \preto\tabular{\global\rownum=\z@}
 \preto\tabularx{\global\rownum=\z@}
@@ -273,7 +274,7 @@
 \titlespacing{\section}{0pt}{20pt}{10pt}
 \titlespacing{\subsection}{0pt}{15pt}{10pt}
 \ttfamily \hyphenchar\the\font=`\-
-\urlstyle{tt}
+\urlstyle{\fonturl}
 \pdfcompresslevel=\pdfcompilecompression
 \pdfdecimaldigits=2
 \pdfinclusionerrorlevel=0
