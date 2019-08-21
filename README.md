@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://latex.ppizarror.com/Template-Controles/" title="Template-Controles">
+  <a href="https://latex.ppizarror.com/controles.html" title="Template-Controles">
     <img alt="Template-Controles" src="https://latex.ppizarror.com/res/favicon-informe/icon.png" width="200px" height="200px" />
   </a>
   <br /><br />
