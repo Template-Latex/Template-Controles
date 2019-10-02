@@ -1,6 +1,6 @@
 % Template:     Template Controles LaTeX
 % Documento:    Configuración inicial del template
-% Versión:      3.4.2 (19/09/2019)
+% Versión:      3.4.3 (02/10/2019)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R.
@@ -66,15 +66,15 @@
 		Template.Autor.Nombre={Pablo Pizarro R.},
 		Template.Autor.Web={https://ppizarror.com/},
 		Template.Codificacion={UTF-8},
-		Template.Fecha={19/09/2019},
+		Template.Fecha={02/10/2019},
 		Template.Latex.Compilador={pdflatex},
 		Template.Licencia.Tipo={MIT},
 		Template.Licencia.Web={https://opensource.org/licenses/MIT/},
 		Template.Nombre={Template-Controles},
 		Template.Tipo={Normal},
-		Template.Version.Dev={3.4.2-CTR/EXM-N},
-		Template.Version.Hash={D24DDF2C133430824953DC4E56CCD0DD},
-		Template.Version.Release={3.4.2},
+		Template.Version.Dev={3.4.3-CTR/EXM-N},
+		Template.Version.Hash={1B04721E41135D04CCC09C7A34E098F3},
+		Template.Version.Release={3.4.3},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles/},
 		Template.Web.Manual={https://latex.ppizarror.com/controles},
 		Universidad.Departamento={\departamentouniversidad},
@@ -86,7 +86,7 @@
 	pdfmenubar={\cfgpdfmenubar},
 	pdfpagelayout={\cfgpdfpagemode},
 	pdfpagemode={\cdfpagemodepdf},
-	pdfproducer={Template-Controles v3.4.2 | (Pablo Pizarro R.) ppizarror.com},
+	pdfproducer={Template-Controles v3.4.3 | (Pablo Pizarro R.) ppizarror.com},
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
@@ -224,6 +224,15 @@
 }{
 	\throwbadconfig{Estilo citas desconocido}{\stylecitereferences}{bibtex,apacite,natbib}}}
 }
+\newcounter{apaciteNumberCounter}
+\addtocounter{apaciteNumberCounter}{-1}
+\makeatletter
+\ifthenelse{\equal{\stylecitereferences}{apacite}}{
+	\ifthenelse{\equal{\apaciterefnumber}{true}}{
+		\renewcommand{\@biblabel}[1]{\apaciterefnumberinit\stepcounter{apaciteNumberCounter}\theapaciteNumberCounter\apaciterefnumberfinal}
+	}{}
+}{}
+\makeatother
 \makeatletter
 \ifthenelse{\equal{\twocolumnreferences}{true}}{
 	\renewenvironment{thebibliography}[1]
