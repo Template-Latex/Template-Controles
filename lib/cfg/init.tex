@@ -1,6 +1,6 @@
 % Template:     Template Controles LaTeX
 % Documento:    Configuración inicial del template
-% Versión:      3.4.4 (18/11/2019)
+% Versión:      3.4.5 (19/11/2019)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R.
@@ -66,15 +66,15 @@
 		Template.Autor.Nombre={Pablo Pizarro R.},
 		Template.Autor.Web={https://ppizarror.com/},
 		Template.Codificacion={UTF-8},
-		Template.Fecha={18/11/2019},
+		Template.Fecha={19/11/2019},
 		Template.Latex.Compilador={pdflatex},
 		Template.Licencia.Tipo={MIT},
 		Template.Licencia.Web={https://opensource.org/licenses/MIT/},
 		Template.Nombre={Template-Controles},
 		Template.Tipo={Normal},
-		Template.Version.Dev={3.4.4-CTR/EXM-N},
-		Template.Version.Hash={1E609302B9D1C3910CA05EEBF9ABB40E},
-		Template.Version.Release={3.4.4},
+		Template.Version.Dev={3.4.5-CTR/EXM-N},
+		Template.Version.Hash={2937107A4EDB3C746FEDF2D341A405B7},
+		Template.Version.Release={3.4.5},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles/},
 		Template.Web.Manual={https://latex.ppizarror.com/controles},
 		Universidad.Departamento={\departamentouniversidad},
@@ -86,7 +86,7 @@
 	pdfmenubar={\cfgpdfmenubar},
 	pdfpagelayout={\cfgpdfpagemode},
 	pdfpagemode={\cdfpagemodepdf},
-	pdfproducer={Template-Controles v3.4.4 | (Pablo Pizarro R.) ppizarror.com},
+	pdfproducer={Template-Controles v3.4.5 | (Pablo Pizarro R.) ppizarror.com},
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
@@ -286,11 +286,13 @@
 \titlespacing{\subsection}{0pt}{15pt}{10pt}
 \ttfamily \hyphenchar\the\font=`\-
 \urlstyle{\fonturl}
-\pdfcompresslevel=\pdfcompilecompression
-\pdfdecimaldigits=2
-\pdfinclusionerrorlevel=0
-\pdfminorversion=\pdfcompileversion
-\pdfobjcompresslevel=\pdfcompileobjcompression
+\ifthenelse{\equal{\compilertype}{pdf2latex}}{
+	\pdfcompresslevel=\pdfcompilecompression
+	\pdfdecimaldigits=2
+	\pdfinclusionerrorlevel=0
+	\pdfminorversion=\pdfcompileversion
+	\pdfobjcompresslevel=\pdfcompileobjcompression
+}{}
 \setcounter{secnumdepth}{4}
 \newcounter{subsubsubsection}[subsubsection]
 \ifthenelse{\equal{\showdotaftersnum}{true}}{
