@@ -1,6 +1,6 @@
 % Template:     Template Controles LaTeX
 % Documento:    Configuración inicial del template
-% Versión:      3.5.0 (05/04/2020)
+% Versión:      3.5.1 (11/04/2020)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R.
@@ -66,15 +66,15 @@
 		Template.Autor.Nombre={Pablo Pizarro R.},
 		Template.Autor.Web={https://ppizarror.com/},
 		Template.Codificacion={UTF-8},
-		Template.Fecha={05/04/2020},
+		Template.Fecha={11/04/2020},
 		Template.Latex.Compilador={pdflatex},
 		Template.Licencia.Tipo={MIT},
 		Template.Licencia.Web={https://opensource.org/licenses/MIT/},
 		Template.Nombre={Template-Controles},
 		Template.Tipo={Normal},
-		Template.Version.Dev={3.5.0-2-CTR/EXM-N},
-		Template.Version.Hash={53C57CF305D141F861A5A1B3E119EBDE},
-		Template.Version.Release={3.5.0},
+		Template.Version.Dev={3.5.1-CTR/EXM-N},
+		Template.Version.Hash={3F28628A139081CF7210E8851A0CD29B},
+		Template.Version.Release={3.5.1},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles/},
 		Template.Web.Manual={https://latex.ppizarror.com/controles},
 		Universidad.Departamento={\departamentouniversidad},
@@ -86,7 +86,7 @@
 	pdfmenubar={\cfgpdfmenubar},
 	pdfpagelayout={\cfgpdfpagemode},
 	pdfpagemode={\cdfpagemodepdf},
-	pdfproducer={Template-Controles v3.5.0 | (Pablo Pizarro R.) ppizarror.com},
+	pdfproducer={Template-Controles v3.5.1 | (Pablo Pizarro R.) ppizarror.com},
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
@@ -285,6 +285,9 @@
 \hbadness=\maxdimen
 \vbadness=\maxdimen
 \makeatletter
+\def\Hv@scale{.95}
+\makeatother
+\makeatletter
 \preto\tabular{\global\rownum=\z@}
 \preto\tabularx{\global\rownum=\z@}
 \makeatother
@@ -292,6 +295,9 @@
 \titlespacing{\section}{0pt}{20pt}{10pt}
 \titlespacing{\subsection}{0pt}{15pt}{10pt}
 \ttfamily \hyphenchar\the\font=`\-
+\makeatletter
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+\makeatother
 \urlstyle{\fonturl}
 \ifthenelse{\equal{\compilertype}{pdf2latex}}{
 	\pdfcompresslevel=\pdfcompilecompression
@@ -431,3 +437,7 @@
 	\addtocounter{lstlisting}{\value{templateListings}}
 	\addtocounter{table}{\value{templateTables}}
 }
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
