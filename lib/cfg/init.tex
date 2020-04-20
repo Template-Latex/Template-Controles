@@ -1,6 +1,6 @@
 % Template:     Template Controles LaTeX
 % Documento:    Configuración inicial del template
-% Versión:      3.5.1 (11/04/2020)
+% Versión:      3.5.1 (20/04/2020)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R.
@@ -41,15 +41,36 @@
 	\bookmarksetup{numbered}}{
 }
 \ifthenelse{\equal{\cfgshowbookmarkmenu}{true}}{
-	\def\cdfpagemodepdf {UseOutlines}
+	\def\cfgpdfpagemode {UseOutlines}
 	}{
-	\def\cdfpagemodepdf {UseNone}
+	\def\cfgpdfpagemode {UseNone}
+}
+\ifthenelse{\equal{\usepdfmetadata}{true}}{
+	\def\pdfmetainfoautor {\autordeldocumento}
+	\def\pdfmetainfocodigodelcurso {\codigodelcurso}
+	\def\pdfmetainfonombredelcurso {\nombredelcurso}
+	\def\pdfmetainfoautor {\autordeldocumento}
+	\def\pdfmetainfotema {\tituloevaluacion}
+	\def\pdfmetainfotitulo {\tituloevaluacion}
+	\def\pdfmetainfounidepto {\departamentouniversidad}
+	\def\pdfmetainfouninombre {\departamentouniversidad}
+	\def\pdfmetainfouniubicacion {\departamentouniversidad}
+}{
+	\def\pdfmetainfoautor {}
+	\def\pdfmetainfocodigodelcurso {}
+	\def\pdfmetainfonombredelcurso {}
+	\def\pdfmetainfoautor {}
+	\def\pdfmetainfotema {}
+	\def\pdfmetainfotitulo {}
+	\def\pdfmetainfounidepto {}
+	\def\pdfmetainfouninombre {}
+	\def\pdfmetainfouniubicacion {}
 }
 \hypersetup{
 	bookmarksopen={\cfgpdfbookmarkopen},
 	bookmarksopenlevel={\cfgbookmarksopenlevel},
 	bookmarkstype={toc},
-	pdfauthor={\autordeldocumento},
+	pdfauthor={\pdfmetainfoautor},
 	pdfcenterwindow={\cfgpdfcenterwindow},
 	pdfcopyright={\cfgpdfcopyright},
 	pdfcreator={LaTeX},
@@ -57,41 +78,41 @@
 	pdfencoding={unicode},
 	pdffitwindow={\cfgpdffitwindow},
 	pdfinfo={
-		Curso.Codigo={\codigodelcurso},
-		Curso.Nombre={\nombredelcurso},
-		Documento.Autor={\autordeldocumento},
-		Documento.Titulo={\tituloevaluacion},
+		Curso.Codigo={\pdfmetainfocodigodelcurso},
+		Curso.Nombre={\pdfmetainfonombredelcurso},
+		Documento.Autor={\pdfmetainfoautor},
+		Documento.Titulo={\pdfmetainfotitulo},
 		Template.Autor.Alias={ppizarror},
 		Template.Autor.Email={pablo@ppizarror.com},
 		Template.Autor.Nombre={Pablo Pizarro R.},
 		Template.Autor.Web={https://ppizarror.com/},
 		Template.Codificacion={UTF-8},
-		Template.Fecha={11/04/2020},
+		Template.Fecha={20/04/2020},
 		Template.Latex.Compilador={pdflatex},
 		Template.Licencia.Tipo={MIT},
 		Template.Licencia.Web={https://opensource.org/licenses/MIT/},
 		Template.Nombre={Template-Controles},
 		Template.Tipo={Normal},
-		Template.Version.Dev={3.5.1-1-CTR/EXM-N},
-		Template.Version.Hash={679A327F94C15D989F65C3D4EECC0688},
+		Template.Version.Dev={3.5.1-2-CTR/EXM-N},
+		Template.Version.Hash={5A67BDEFD8E2C5E2C73AC475B28885CD},
 		Template.Version.Release={3.5.1},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles/},
 		Template.Web.Manual={https://latex.ppizarror.com/controles},
-		Universidad.Departamento={\departamentouniversidad},
-		Universidad.Nombre={\nombreuniversidad},
-		Universidad.Ubicacion={\localizacionuniversidad}
+		Universidad.Departamento={\pdfmetainfounidepto},
+		Universidad.Nombre={\pdfmetainfouninombre},
+		Universidad.Ubicacion={\pdfmetainfouniubicacion}
 	},
 	pdfkeywords={\cfgpdfkeywords},
 	pdflang={\documentlang},
 	pdfmenubar={\cfgpdfmenubar},
-	pdfpagelayout={\cfgpdfpagemode},
-	pdfpagemode={\cdfpagemodepdf},
+	pdfpagelayout={\cfgpdflayout},
+	pdfpagemode={\cfgpdfpagemode},
 	pdfproducer={Template-Controles v3.5.1 | (Pablo Pizarro R.) ppizarror.com},
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
-	pdfsubject={\tituloevaluacion},
-	pdftitle={\tituloevaluacion},
+	pdfsubject={\pdfmetainfotema},
+	pdftitle={\pdfmetainfotitulo},
 	pdftoolbar={\cfgpdftoolbar}
 }
 \graphicspath{{./\defaultimagefolder}{./\defaultimagefolder/departamentos/}}
