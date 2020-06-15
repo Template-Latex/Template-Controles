@@ -1187,11 +1187,7 @@
 			\vspace{\captionlessmarginimage cm}
 		\else
 			\hspace{0cm}
-			\ifthenelse{\equal{\GLOBALcaptiondefn}{EMPTY-VAR}}{
-				\caption{#5 #1}
-			}{
-				\caption[\GLOBALcaptiondefn]{#5 #1}
-			}
+			\ifthenelse{\equal{\GLOBALcaptiondefn}{EMPTY-VAR}}{\caption{#5 #1}}{\caption[\GLOBALcaptiondefn]{#5 #1}}
 		\fi
 	\end{figure}
 	\vspace{\marginimagebottom cm}
@@ -1224,11 +1220,7 @@
 		\ifx\hfuzz#5\hfuzz
 			\vspace{\captionlessmarginimage cm}
 		\else
-			\ifthenelse{\equal{\GLOBALcaptiondefn}{EMPTY-VAR}}{
-				\caption{#5 #1}
-			}{
-				\caption[\GLOBALcaptiondefn]{#5 #1}
-			}
+			\ifthenelse{\equal{\GLOBALcaptiondefn}{EMPTY-VAR}}{\caption{#5 #1}}{\caption[\GLOBALcaptiondefn]{#5 #1}}
 		\fi
 	\end{wrapfigure}
 	\setcaptionmargincm{\captionlrmargin}
@@ -1259,11 +1251,7 @@
 		\ifx\hfuzz#6\hfuzz
 			\vspace{\captionlessmarginimage cm}
 		\else
-			\ifthenelse{\equal{\GLOBALcaptiondefn}{EMPTY-VAR}}{
-				\caption{#6 #1}
-			}{
-				\caption[\GLOBALcaptiondefn]{#6 #1}
-			}
+			\ifthenelse{\equal{\GLOBALcaptiondefn}{EMPTY-VAR}}{\caption{#6 #1}}{\caption[\GLOBALcaptiondefn]{#6 #1}}
 		\fi
 	\end{wrapfigure}
 	\setcaptionmargincm{\captionlrmargin}
@@ -1294,11 +1282,7 @@
 		\ifx\hfuzz#5\hfuzz
 			\vspace{\captionlessmarginimage cm}
 		\else
-			\ifthenelse{\equal{\GLOBALcaptiondefn}{EMPTY-VAR}}{
-				\caption{#5 #1}
-			}{
-				\caption[\GLOBALcaptiondefn]{#5 #1}
-			}
+			\ifthenelse{\equal{\GLOBALcaptiondefn}{EMPTY-VAR}}{\caption{#5 #1}}{\caption[\GLOBALcaptiondefn]{#5 #1}}
 		\fi
 	\end{wrapfigure}
 	\setcaptionmargincm{\captionlrmargin}
@@ -1330,11 +1314,7 @@
 		\ifx\hfuzz#6\hfuzz
 			\vspace{\captionlessmarginimage cm}
 		\else
-			\ifthenelse{\equal{\GLOBALcaptiondefn}{EMPTY-VAR}}{
-				\caption{#6 #1}
-			}{
-				\caption[\GLOBALcaptiondefn]{#6 #1}
-			}
+			\ifthenelse{\equal{\GLOBALcaptiondefn}{EMPTY-VAR}}{\caption{#6 #1}}{\caption[\GLOBALcaptiondefn]{#6 #1}}
 		\fi
 	\end{wrapfigure}
 	\setcaptionmargincm{\captionlrmargin}
@@ -1369,11 +1349,7 @@
 		\ifx\hfuzz#6\hfuzz
 			\vspace{\captionlessmarginimage cm}
 		\else
-			\ifthenelse{\equal{\GLOBALcaptiondefn}{EMPTY-VAR}}{
-				\caption{#6 #1}
-			}{
-				\caption[\GLOBALcaptiondefn]{#6 #1}
-			}
+			\ifthenelse{\equal{\GLOBALcaptiondefn}{EMPTY-VAR}}{\caption{#6 #1}}{\caption[\GLOBALcaptiondefn]{#6 #1}}
 		\fi
 	\end{wrapfigure}
 	\setcaptionmargincm{\captionlrmargin}
@@ -1406,11 +1382,7 @@
 		\ifx\hfuzz#7\hfuzz
 			\vspace{\captionlessmarginimage cm}
 		\else
-			\ifthenelse{\equal{\GLOBALcaptiondefn}{EMPTY-VAR}}{
-				\caption{#7 #1}
-			}{
-				\caption[\GLOBALcaptiondefn]{#7 #1}
-			}
+			\ifthenelse{\equal{\GLOBALcaptiondefn}{EMPTY-VAR}}{\caption{#7 #1}}{\caption[\GLOBALcaptiondefn]{#7 #1}}
 		\fi
 	\end{wrapfigure}
 	\setcaptionmargincm{\captionlrmargin}
@@ -1445,11 +1417,7 @@
 		\ifx\hfuzz#6\hfuzz
 			\vspace{\captionlessmarginimage cm}
 		\else
-			\ifthenelse{\equal{\GLOBALcaptiondefn}{EMPTY-VAR}}{
-				\caption{#6 #1}
-			}{
-				\caption[\GLOBALcaptiondefn]{#6 #1}
-			}
+			\ifthenelse{\equal{\GLOBALcaptiondefn}{EMPTY-VAR}}{\caption{#6 #1}}{\caption[\GLOBALcaptiondefn]{#6 #1}}
 		\fi
 	\end{wrapfigure}
 	\setcaptionmargincm{\captionlrmargin}
@@ -1482,11 +1450,7 @@
 		\ifx\hfuzz#7\hfuzz
 			\vspace{\captionlessmarginimage cm}
 		\else
-			\ifthenelse{\equal{\GLOBALcaptiondefn}{EMPTY-VAR}}{
-				\caption{#7 #1}
-			}{
-				\caption[\GLOBALcaptiondefn]{#7 #1}
-			}
+			\ifthenelse{\equal{\GLOBALcaptiondefn}{EMPTY-VAR}}{\caption{#7 #1}}{\caption[\GLOBALcaptiondefn]{#7 #1}}
 		\fi
 	\end{wrapfigure}
 	\setcaptionmargincm{\captionlrmargin}
@@ -2809,8 +2773,8 @@
 		Template.Licencia.Web={https://opensource.org/licenses/MIT/},
 		Template.Nombre={Template-Controles},
 		Template.Tipo={Normal},
-		Template.Version.Dev={4.0.0-alpha-2-CTR/EXM-N},
-		Template.Version.Hash={042DC10ABB021103E6079957731823A2},
+		Template.Version.Dev={4.0.0-alpha-3-CTR/EXM-N},
+		Template.Version.Hash={CC05F4E4977C0A5C00FFA0A8BB46B504},
 		Template.Version.Release={4.0.0},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles/},
 		Template.Web.Manual={https://latex.ppizarror.com/controles},
