@@ -1,6 +1,6 @@
 % Template:     Template Controles LaTeX
 % Documento:    Importación de librerías
-% Versión:      4.0.0 (15/06/2020)
+% Versión:      4.0.0 (17/06/2020)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R.
@@ -52,6 +52,9 @@
 }{
 	\usepackage{amsmath}
 }
+\usepackage{scrextend}
+\usepackage{anyfontsize}
+\changefontsizes{\documentfontsize pt}
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{array}
@@ -108,6 +111,7 @@
 }
 \usepackage[pdfencoding=auto,psdextra]{hyperref}
 \ifthenelse{\equal{\stylecitereferences}{natbib}}{
+	\usepackage[nottoc,notlof,notlot]{tocbibind}
 	\ifthenelse{\equal{\natbibrefstyle}{apa}}{
 		\ifthenelse{\equal{\natbibsquare}{true}}{
 			\usepackage[square]{natbib}
@@ -150,11 +154,10 @@
 			}
 		}
 	}}}}
-	\usepackage[nottoc,notlof,notlot]{tocbibind}
 }{
 \ifthenelse{\equal{\stylecitereferences}{apacite}}{
-		\usepackage{apacite}
 		\usepackage[nottoc,notlof,notlot]{tocbibind}
+		\usepackage{apacite}
 	}{
 \ifthenelse{\equal{\stylecitereferences}{bibtex}}{
 		}{}

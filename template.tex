@@ -1,6 +1,6 @@
 % Template:     Template Controles LaTeX
 % Documento:    Núcleo del template
-% Versión:      4.0.0 (15/06/2020)
+% Versión:      4.0.0 (17/06/2020)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R.
@@ -87,6 +87,11 @@
 }{
 	\usepackage{amsmath}
 }
+
+% Tamaño de la fuente del documento
+\usepackage{scrextend}
+\usepackage{anyfontsize}
+\changefontsizes{\documentfontsize pt}
 
 % -----------------------------------------------------------------------------
 % LIBRERÍAS INDEPENDIENTES
@@ -179,6 +184,7 @@
 % Desde 6.5.6 se carga después de las referencias (apacite, natbib, bibtex)
 \usepackage[pdfencoding=auto,psdextra]{hyperref} % Enlaces, referencias
 \ifthenelse{\equal{\stylecitereferences}{natbib}}{ % Formato citas natbib
+	\usepackage[nottoc,notlof,notlot]{tocbibind}
 	\ifthenelse{\equal{\natbibrefstyle}{apa}}{
 		\ifthenelse{\equal{\natbibsquare}{true}}{
 			\usepackage[square]{natbib}
@@ -221,11 +227,10 @@
 			}
 		}
 	}}}}
-	\usepackage[nottoc,notlof,notlot]{tocbibind}
 }{
 	\ifthenelse{\equal{\stylecitereferences}{apacite}}{ % Formato citas apacite
-		\usepackage{apacite}
 		\usepackage[nottoc,notlof,notlot]{tocbibind}
+		\usepackage{apacite}
 	}{
 		\ifthenelse{\equal{\stylecitereferences}{bibtex}}{ % Formato citas bibtex
 		}{}
@@ -1580,6 +1585,56 @@
 	\resetindexcaption
 }
 
+% Insertar una imagen completa en un entorno multicol
+% 	#1	Label (opcional)
+%	#2	Dirección de la imagen
+%	#3	Parámetros de la imagen
+%	#4	Posición, "top" o "bottom"
+%	#5	Leyenda de la imagen (opcional)
+\newcommand{\insertimagemc}[5][]{
+	\insertimageboxedmc[#1]{#2}{#3}{0}{#4}{#5}
+}
+
+
+% Insertar una imagen completa con recuadro en un entorno multicol
+% 	#1	Label (opcional)
+%	#2	Dirección de la imagen
+%	#3	Parámetros de la imagen
+%	#4	Ancho de la línea (en pt)
+%	#5	Posición, "top" o "bottom"
+%	#6	Leyenda de la imagen (opcional)
+\newcommand{\insertimageboxedmc}[6][]{
+	\emptyvarerr{\insertimageboxedmc}{#2}{Direccion de la imagen no definida}
+	\emptyvarerr{\insertimageboxedmc}{#3}{Parametros de la imagen no definidos}
+	\emptyvarerr{\insertimageboxedmc}{#4}{Ancho de la linea no definido}
+	\emptyvarerr{\insertimageboxedmc}{#5}{Posicion de la imagen no definida}
+	\checkoutsideenvimage
+	\setcaptionmargincm{\captionlrmarginmc}
+	\ifthenelse{\equal{#5}{bottom}}{
+		\begin{figure*}[b!]
+	}{
+	\ifthenelse{\equal{#5}{top}}{
+		\begin{figure*}[t!]
+	}{
+		\errmessage{LaTeX Warning: Posicion de imagen invalida, valores esperados: bottom,top}
+	}}
+		\begingroup
+			\setlength{\fboxsep}{0 pt}
+			\setlength{\fboxrule}{#4 pt}
+			\centering
+			\fbox{\includegraphics[#3]{#2}}
+		\endgroup
+		\ifx\hfuzz#6\hfuzz
+			\vspace{\captionlessmarginimage cm}
+		\else
+			\hspace{0cm}
+			\ifthenelse{\equal{\GLOBALcaptiondefn}{EMPTY-VAR}}{\caption{#6 #1}}{\caption[\GLOBALcaptiondefn]{#6 #1}}
+		\fi
+	\end{figure*}
+	\setcaptionmargincm{\captionlrmargin}
+	\resetindexcaption
+}
+
 % Insertar una imagen dentro de una tabla
 %	#1	Dirección de la imagen
 %	#2	Parámetros de la imagen
@@ -2193,7 +2248,7 @@
 	\markboth{}{}
 }
 % Insertar párrafo
-\newcommand{\newp}{\hbadness=10000 \vspace{\defaultnewlinesize pt} \par}
+\newcommand{\newp}{\hbadness=10000 \vspace{\baselineskip} \par}
 
 % Insertar párrafo
 % 	#1	Párrafo
@@ -2520,7 +2575,7 @@
 	
 	% Configura caption y márgenes
 	\vspace{\marginimagetop cm}
-	\captionsetup{margin=\captionmarginmultimg cm}
+	\setcaptionmargincm{\captionmarginmultimg}
 	
 	% Inicia la figura
 	\begin{figure}[H] \centering
@@ -2816,16 +2871,14 @@
 \colorlet{punct}{red!60!black}
 \definecolor{delim}{RGB}{20,105,176}
 \definecolor{dkcyan}{RGB}{0,123,167}
-\definecolor{dkgray}{rgb}{0.35,0.35,0.35}
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{dkyellow}{cmyk}{0,0,0.8,0.3}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{dkgray}{RGB}{90,90,90}
+\definecolor{dkgreen}{RGB}{0,150,0}
+\definecolor{dkyellow}{RGB}{179,179,36}
+\definecolor{gray}{RGB}{127,127,127}
 \definecolor{lbrown}{RGB}{255,252,249}
 \definecolor{lgray}{RGB}{240,240,240}
-\definecolor{lyellow}{rgb}{1.0,1.0,0.88}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
-\definecolor{mygray}{rgb}{0.5,0.5,0.5}
-\definecolor{ocher}{rgb}{1,0.5,0}
+\definecolor{lyellow}{RGB}{255,255,204}
+\definecolor{mauve}{RGB}{150,0,210}
 \definecolor{ocre}{RGB}{243,102,25}
 % -----------------------------------------------------------------------------
 % Assembler
@@ -2906,8 +2959,7 @@
 % CSV, Archivos separados por coma
 % -----------------------------------------------------------------------------
 \lstdefinestyle{csv}{
-	language={},
-	columns=flexible
+	language={}
 }
 
 % -----------------------------------------------------------------------------
@@ -3016,7 +3068,6 @@
 % -----------------------------------------------------------------------------
 \lstdefinestyle{ini}{
 	language={},
-	columns=flexible,
 	commentstyle=\color{gray}\ttfamily,
 	keywordstyle={\color{black}\bfseries},
 	morecomment=[l]{;},
@@ -3140,7 +3191,6 @@
 \lstdefinestyle{matlab}{
 	language=Matlab,
 	deletekeywords={fft},
-	flexiblecolumns=true,
 	keepspaces=true,
 	morecomment=[l]\%,
 	morecomment=[n]{\%\{\^^M}{\%\}\^^M},
@@ -3154,7 +3204,6 @@
 % -----------------------------------------------------------------------------
 \lstdefinestyle{octave}{
 	language=Octave,
-	flexiblecolumns=true,
 	keepspaces=true,
 	morecomment=[l]\%,
 	morecomment=[n]{\%\{\^^M}{\%\}\^^M}
@@ -3242,21 +3291,8 @@
 % -----------------------------------------------------------------------------
 \lstdefinestyle{plaintext}{
 	language={},
-	columns=fullflexible,
 	keepspaces=true,
 	postbreak={},
-	literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
-	{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1 {à}{{\`a}}1
-	{è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1 {À}{{\`A}}1 {È}{{\'E}}1
-	{Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1 {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1
-	{ö}{{\"o}}1 {ü}{{\"u}}1 {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1
-	{Ü}{{\"U}}1 {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
-	{Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1 {œ}{{\oe}}1
-	{Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1 {ű}{{\H{u}}}1
-	{Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1 {ç}{{\c c}}1 {Ç}{{\c C}}1
-	{ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1 {€}{{\EUR}}1 {£}{{\pounds}}1
-	{ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?``}}1 {¡}{{!``}}1 {«}{{\guillemotleft}}1
-	{»}{{\guillemotright}}1 {\ \ }{{\ }}1,
 	tabsize=4
 }
 
@@ -3289,10 +3325,13 @@
 \lstdefinestyle{python}{
 	language=Python,
 	breakatwhitespace=false,
-	emph={__init__,__name__},
+	emph={
+		AbstractSet,Any,AsyncContextManager,AsyncGenerator,AsyncIterable,AsyncIterator,Awaitable,AwaitableGenerator,BinaryIO,ByteString,Callable,Collection,Container,ContextManager,Coroutine,Dict,ForwardRef,Generator,GenericMeta,Hashable,IO,ItemsView,Iterable,Iterator,KeysView,List,Mapping,MappingView,Match,Meta,MutableMapping,MutableSequence,MutableSet,NamedTuple,Pattern,Reversible,Sequence,Sized,SupportInts,SupportsAbs,SupportsBytes,SupportsComplex,SupportsFloat,SupportsIndex,SupportsRound,TextIO,Tuple,TypeAlias,TYPE_CHECKING,Union,ValuesView,__add__,__and__,__eq__,__floordiv__,__ge__,__gt__,__init__,__le__,__lt__,__main__,__mod__,__mul__,__name__,__ne__,__or__,__pow__,__repr__,__str__,__sub__,__truediv__,__xor__
+	},
 	emphstyle=\color{dkcyan}\ttfamily,
 	keepspaces=true,
-	morekeywords={as,assert,close,listdir,split,strip,with}
+	morecomment=[s][\color{BurntOrange}]{@}{\ },
+	morekeywords={as,assert,close,listdir,None,self,sorted,split,strip,with}
 }
 
 % -----------------------------------------------------------------------------
@@ -3423,7 +3462,7 @@
 	basicstyle={\sourcecodefonts\sourcecodefontf\color{\maintextcolor}},
 	belowskip=1em,
 	breaklines=true,
-	columns=flexible,
+	columns=fullflexible,
 	commentstyle=\color{dkgreen}\upshape,
 	extendedchars=true,
 	fontadjust=true,
@@ -3442,7 +3481,9 @@
 		{Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1 {ç}{{\c c}}1 {Ç}{{\c C}}1
 		{ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1 {€}{{\EUR}}1 {£}{{\pounds}}1
 		{ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?``}}1 {¡}{{!``}}1 {«}{{\guillemotleft}}1
-		{»}{{\guillemotright}}1,
+		{»}{{\guillemotright}}1 {°}{{\textdegree}}1 {∢}{{$\sphericalangle$}}1
+		{¬}{{$\neg$}}1 {¨}{{\textasciidieresis}}1 {ã}{{\~a}}1 {Ã}{{\~a}}1
+		{õ}{{\~o}}1 {Õ}{{\~O}}1 {Ð}{{\DJ}}1 {Ø}{{\O}}1 {Ý}{{\'Y}}1,
 	numbers=left,
 	numbersep={\sourcecodenumbersep pt},
 	numberstyle=\tiny\color{dkgray},
@@ -3502,7 +3543,6 @@
 	\ifthenelse{\equal{#1}{verilog}}{}{
 	\ifthenelse{\equal{#1}{vhdl}}{}{
 	\ifthenelse{\equal{#1}{xml}}{}{
-		\def\sourcecodestyle {#1}
 		\errmessage{LaTeX Warning: Estilo de codigo desconocido. Valores esperados: assemblerx64,assemblerx86,bash,c,cpp,csharp,css,csv,cuda,docker,fortran,glsl,haskell,html5,ini,java,js,json,kotlin,latex,lisp,lua,maple,matlab,octave,opencl,opensees,pascal,perl,php,plaintext,pseudocode,python,r,ruby,scala,scheme,sql,tcl,vbscript,verilog,vhdl,xml}
 	}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
 }
@@ -3668,14 +3708,14 @@
 		Template.Autor.Nombre={Pablo Pizarro R.},
 		Template.Autor.Web={https://ppizarror.com/},
 		Template.Codificacion={UTF-8},
-		Template.Fecha={15/06/2020},
+		Template.Fecha={17/06/2020},
 		Template.Latex.Compilador={pdflatex},
 		Template.Licencia.Tipo={MIT},
 		Template.Licencia.Web={https://opensource.org/licenses/MIT/},
 		Template.Nombre={Template-Controles},
 		Template.Tipo={Normal},
-		Template.Version.Dev={4.0.0-alpha-4-CTR/EXM},
-		Template.Version.Hash={2A6205F3EB12141D49922D08D63A984A},
+		Template.Version.Dev={4.0.0-beta-1-CTR/EXM},
+		Template.Version.Hash={FA60453B2611FFF95186C13A555C9946},
 		Template.Version.Release={4.0.0},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles/},
 		Template.Web.Manual={https://latex.ppizarror.com/controles},
@@ -3705,7 +3745,7 @@
 % -----------------------------------------------------------------------------
 % Definición de valores e dimensiones
 % -----------------------------------------------------------------------------
-\renewcommand{\baselinestretch}{\defaultinterline} % Ajuste del entrelineado
+\renewcommand{\baselinestretch}{\documentinterline} % Ajuste del entrelineado
 \setlength{\headheight}{64 pt} % Tamaño de la cabecera sin fancyhdr
 % \setcounter{MaxMatrixCols}{20} % Número máximo de columnas en matrices
 \setlength{\footnotemargin}{\marginfootnote pt} % Margen del footnote
@@ -3843,22 +3883,21 @@
 % Configuración de referencias y citas
 % -----------------------------------------------------------------------------
 \ifthenelse{\equal{\stylecitereferences}{natbib}}{
+	\def\twocolumnreferencesmargin{-0.35cm}
 	\bibliographystyle{\natbibrefstyle}
 	\setlength{\bibsep}{\natbibrefsep pt}
-	%\newcommand{\shortcite}[1]{\texttt{\textbackslash shortcite\{#1\}}\throwwarning{Esta funcion no es soportada con el uso de las referencias natbib}}
-	%\newcommand{\fullcite}[1]{\texttt{\textbackslash fullcite\{#1\}}\throwwarning{Esta funcion no es soportada con el uso de las referencias natbib}}
 	\newcommand{\shortcite}[1]{\texttt{\textbackslash shortcite\{#1\}}}
 	\newcommand{\fullcite}[1]{\texttt{\textbackslash fullcite\{#1\}}}
 }{
 \ifthenelse{\equal{\stylecitereferences}{apacite}}{
+	\def\twocolumnreferencesmargin{-0.39cm}
 	\bibliographystyle{\apacitestyle}
 	\setlength{\bibitemsep}{\apaciterefsep pt}
-	%\newcommand{\citet}[1]{\texttt{\textbackslash citet\{#1\}}\throwwarning{Esta funcion no es soportada con el uso de las referencias apacite}}
-	%\newcommand{\citep}[1]{\texttt{\textbackslash citep\{#1\}}\throwwarning{Esta funcion no es soportada con el uso de las referencias apacite}}
 	\newcommand{\citet}[1]{\texttt{\textbackslash citet\{#1\}}}
-	\newcommand{\citep}[1]{\texttt{\textbackslash citep\{#1\}}}
+	\newcommand{\citep}[1]{\texttt{\textbackslash citep\{#1\}}}	
 }{
 \ifthenelse{\equal{\stylecitereferences}{bibtex}}{
+	\def\twocolumnreferencesmargin{-0.35cm}
 	\bibliographystyle{\bibtexstyle}
 	\newlength{\bibitemsep}
 	\setlength{\bibitemsep}{.2\baselineskip plus .05\baselineskip minus .05\baselineskip}
@@ -3874,20 +3913,30 @@
 	\throwbadconfig{Estilo citas desconocido}{\stylecitereferences}{bibtex,apacite,natbib}}}
 }
 % Crea referencias enumeradas en apacite
-\newcounter{apaciteNumberCounter}
-\addtocounter{apaciteNumberCounter}{-1}
 \makeatletter
 \ifthenelse{\equal{\stylecitereferences}{apacite}}{
 	\ifthenelse{\equal{\apaciterefnumber}{true}}{
-		\renewcommand{\@biblabel}[1]{\apaciterefnumberinit\stepcounter{apaciteNumberCounter}\theapaciteNumberCounter\apaciterefnumberfinal}
+		\newcounter{apaciteNumberCounter}
+		\renewcommand{\theapaciteNumberCounter}{\apaciterefnumberinit\arabic{apaciteNumberCounter}\apaciterefnumberfinal} % Formato de número
+		\patchcmd{\@lbibitem}{\item[}{\item[\stepcounter{apaciteNumberCounter}{\hss\llap{\theapaciteNumberCounter}\quad}}{}{}
+		\setlength{\bibleftmargin}{2.54em}
+		\setlength{\bibindent}{-0.54em}
 	}{}
 }{}
 \makeatother
+% Desactiva la URL de apacite
+\ifthenelse{\equal{\stylecitereferences}{apacite}}{
+	\ifthenelse{\equal{\apaciteshowurl}{false}}{
+		\renewenvironment{APACrefURL}[1][]{}{}
+		\AtBeginEnvironment{APACrefURL}{\renewcommand{\url}[1]{}}
+		\renewcommand{\doiprefix}{doi:~\kern-1pt}
+	}{}
+}{}
 % Referencias en 2 columnas
 \makeatletter
 \ifthenelse{\equal{\twocolumnreferences}{true}}{
 	\renewenvironment{thebibliography}[1]
-	{\begin{multicols}{2}[\section*{\refname}]
+	{\begin{multicols}{2}[\section*{\refname}\vspace{\twocolumnreferencesmargin}]
 		\@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}
 		\list{\@biblabel{\@arabic\c@enumiv}}
 		{\settowidth\labelwidth{\@biblabel{#1}}
@@ -4446,6 +4495,13 @@
 	\subsubsectionfont{\color{\subsubtitlecolor} \fontsizesubsubtitle \stylesubsubtitle \selectfont}
 	\titleformat{\subsubsubsection}{\color{\ssstitlecolor} \normalfont \fontsizessstitle \stylessstitle}{\thesubsubsubsection}{1em}{}
 	\titlespacing*{\subsubsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+	
+	% -----------------------------------------------------------------------------
+	% Estilo citas
+	% -----------------------------------------------------------------------------
+	\ifthenelse{\equal{\stylecitereferences}{apacite}}{
+		\renewcommand{\BOthers}[1]{\apacitebothers\hbox{}}
+	}{}
 
 	% -----------------------------------------------------------------------------
 % Se crean los header-footer
