@@ -1,6 +1,6 @@
 % Template:     Template Controles LaTeX
 % Documento:    Configuración inicial del template
-% Versión:      4.0.0 (17/06/2020)
+% Versión:      4.0.0 (19/06/2020)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R.
@@ -37,6 +37,8 @@
 	\def\indicacionevaluacion {}
 }{}
 
+\corecheckfontsize{\captionfontsize}
+\corecheckfontsize{\subcaptionfsize}
 \ifthenelse{\equal{\cfgpdfsecnumbookmarks}{true}}{
 	\bookmarksetup{numbered}}{
 }
@@ -87,14 +89,14 @@
 		Template.Autor.Nombre={Pablo Pizarro R.},
 		Template.Autor.Web={https://ppizarror.com/},
 		Template.Codificacion={UTF-8},
-		Template.Fecha={17/06/2020},
+		Template.Fecha={19/06/2020},
 		Template.Latex.Compilador={pdflatex},
 		Template.Licencia.Tipo={MIT},
 		Template.Licencia.Web={https://opensource.org/licenses/MIT/},
 		Template.Nombre={Template-Controles},
 		Template.Tipo={Normal},
-		Template.Version.Dev={4.0.0-beta-2-CTR/EXM},
-		Template.Version.Hash={DE92AFECFD1FF797177EEC0F245271DB},
+		Template.Version.Dev={4.0.0-beta-4-CTR/EXM},
+		Template.Version.Hash={AC25F8A8ED0FD4EF9446C39F2927A603},
 		Template.Version.Release={4.0.0},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles/},
 		Template.Web.Manual={https://latex.ppizarror.com/controles},
@@ -115,7 +117,13 @@
 	pdftitle={\pdfmetainfotitulo},
 	pdftoolbar={\cfgpdftoolbar}
 }
-\graphicspath{{./\defaultimagefolder}{./\defaultimagefolder/departamentos/}}
+\graphicspath{{./\defaultimagefolder}}
+\makeatletter
+\ifthenelse{\equal{\fpremovetopbottomcenter}{true}}{
+	\setlength{\@fptop}{0pt}
+	\setlength{\@fpbot}{0pt}
+}{}
+\makeatother
 \renewcommand{\baselinestretch}{\documentinterline}
 \setlength{\headheight}{64 pt}
 \setlength{\footnotemargin}{\marginfootnote pt}
@@ -159,6 +167,7 @@
 	\renewcommand{\captiontextsubnumbold}{}
 }
 \captionsetup{
+	font={\captionfontsize},
 	labelfont={color=\captioncolor, \captiontextbold},
 	labelformat={\captionlabelformat},
 	labelsep={\captionlabelsep},
@@ -166,6 +175,7 @@
 	singlelinecheck=on
 }
 \captionsetup*[subfigure]{
+	font={\subcaptionfsize},
 	labelfont={color=\captioncolor, \captiontextsubnumbold},
 	labelformat={\subcaptionlabelformat},
 	labelsep={\subcaptionlabelsep},
@@ -173,6 +183,7 @@
 	singlelinecheck=on
 }
 \captionsetup*[subtable]{
+	font={\subcaptionfsize},
 	labelfont={color=\captioncolor, \captiontextsubnumbold},
 	labelformat={\subcaptionlabelformat},
 	labelsep={\subcaptionlabelsep},
