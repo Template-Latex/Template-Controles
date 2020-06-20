@@ -1,6 +1,6 @@
 % Template:     Template Controles LaTeX
 % Documento:    Configuración inicial del template
-% Versión:      4.0.0 (19/06/2020)
+% Versión:      4.0.0 (20/06/2020)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R.
@@ -89,14 +89,14 @@
 		Template.Autor.Nombre={Pablo Pizarro R.},
 		Template.Autor.Web={https://ppizarror.com/},
 		Template.Codificacion={UTF-8},
-		Template.Fecha={19/06/2020},
+		Template.Fecha={20/06/2020},
 		Template.Latex.Compilador={pdflatex},
 		Template.Licencia.Tipo={MIT},
 		Template.Licencia.Web={https://opensource.org/licenses/MIT/},
 		Template.Nombre={Template-Controles},
 		Template.Tipo={Normal},
-		Template.Version.Dev={4.0.0-beta-4-CTR/EXM},
-		Template.Version.Hash={AC25F8A8ED0FD4EF9446C39F2927A603},
+		Template.Version.Dev={4.0.0-beta-6-CTR/EXM},
+		Template.Version.Hash={058292FF42F1979FAF42DC5507E1F0DA},
 		Template.Version.Release={4.0.0},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles/},
 		Template.Web.Manual={https://latex.ppizarror.com/controles},
@@ -233,15 +233,15 @@
 	\def\twocolumnreferencesmargin{-0.35cm}
 	\bibliographystyle{\natbibrefstyle}
 	\setlength{\bibsep}{\natbibrefsep pt}
-	\newcommand{\shortcite}[1]{\texttt{\textbackslash shortcite\{#1\}}}
-	\newcommand{\fullcite}[1]{\texttt{\textbackslash fullcite\{#1\}}}
+	\newcommand{\shortcite}[1]{\citep{#1}}
+	\newcommand{\fullcite}[1]{\citet{#1}}
 }{
 \ifthenelse{\equal{\stylecitereferences}{apacite}}{
 	\def\twocolumnreferencesmargin{-0.39cm}
 	\bibliographystyle{\apacitestyle}
 	\setlength{\bibitemsep}{\apaciterefsep pt}
-	\newcommand{\citet}[1]{\texttt{\textbackslash citet\{#1\}}}
-	\newcommand{\citep}[1]{\texttt{\textbackslash citep\{#1\}}}	
+	\newcommand{\citep}[1]{\fullcite{#1}}
+	\newcommand{\citet}[1]{\shortcite{#1}}
 }{
 \ifthenelse{\equal{\stylecitereferences}{bibtex}}{
 	\def\twocolumnreferencesmargin{-0.35cm}
