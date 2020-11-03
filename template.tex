@@ -1,6 +1,6 @@
 % Template:     Template Controles LaTeX
 % Documento:    Núcleo del template
-% Versión:      4.0.7 (29/10/2020)
+% Versión:      4.0.8 (03/11/2020)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R.
@@ -3907,15 +3907,15 @@
 		Template.Autor.Nombre={Pablo Pizarro R.},
 		Template.Autor.Web={https://ppizarror.com/},
 		Template.Codificacion={UTF-8},
-		Template.Fecha={29/10/2020},
+		Template.Fecha={03/11/2020},
 		Template.Latex.Compilador={pdflatex},
 		Template.Licencia.Tipo={MIT},
 		Template.Licencia.Web={https://opensource.org/licenses/MIT/},
 		Template.Nombre={Template-Controles},
 		Template.Tipo={Normal},
-		Template.Version.Dev={4.0.7-CTR/EXM},
-		Template.Version.Hash={DF5E9906E46FC8636ECB36FDF6BD1CF3},
-		Template.Version.Release={4.0.7},
+		Template.Version.Dev={4.0.8-1-CTR/EXM},
+		Template.Version.Hash={9C3043DCB000B9B71939E93DB5716EF6},
+		Template.Version.Release={4.0.8},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles/},
 		Template.Web.Manual={https://latex.ppizarror.com/controles},
 		Universidad.Departamento={\pdfmetainfounidepto},
@@ -3927,7 +3927,7 @@
 	pdfmenubar={\cfgpdfmenubar},
 	pdfpagelayout={\cfgpdflayout},
 	pdfpagemode={\cfgpdfpagemode},
-	pdfproducer={Template-Controles v4.0.7 | (Pablo Pizarro R.) ppizarror.com},
+	pdfproducer={Template-Controles v4.0.8 | (Pablo Pizarro R.) ppizarror.com},
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
@@ -4752,6 +4752,7 @@
 \thispagestyle{styleportrait} % Encabezado control (título e integrantes)
 \begin{flushleft} % Crea el header
 	\hspace{0cm}
+	\vspace{-0cm}
 	\begin{tabular}{c}
 		\hspace{-0.45cm}~
 		\begin{minipage}[t]{0.6\linewidth}
@@ -4759,7 +4760,7 @@
 			\nombreuniversidad ~ \\
 			\nombrefacultad ~ \\
 			\departamentouniversidad ~ \\
-			\codigodelcurso\ - \nombredelcurso~
+			\codigodelcurso\ - \nombredelcurso ~ \\
 		\end{minipage}
 		~\hspace{-0.25cm}~
 		\begin{minipage}[t]{0.4\linewidth}
@@ -4774,7 +4775,7 @@
 \vspace*{-1.25cm}
 \rule{1\linewidth}{0.5pt}
 \begin{center}
-	\vspace*{0.75cm}
+	\vspace*{0.35cm}
 	\huge {\tituloevaluacion} ~ \\
 	\ifdefempty{\equipodocente}{}{
 		\vspace{0.2cm}
