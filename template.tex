@@ -111,6 +111,7 @@
 \usepackage{floatrow}      % Permite administrar posiciones en los caption
 \usepackage{framed}        % Permite creación de recuadros
 \usepackage{gensymb}       % Simbología común
+\usepackage{graphicx}      % Propiedades extra para los gráficos
 \usepackage{lipsum}        % Permite crear párrafos de prueba
 \usepackage{listings}      % Permite añadir código fuente
 \usepackage{longtable}     % Permite utilizar tablas en varias hojas
@@ -161,11 +162,14 @@
 % LIBRERÍAS CONDICIONALES
 % -----------------------------------------------------------------------------
 
-% Carga las imagenes
-\ifthenelse{\equal{\graphicxdraft}{false}}{
-	\usepackage{graphicx}
-}{
-	\usepackage[draft]{graphicx}
+% Imágenes en modo draft
+\ifthenelse{\equal{\graphicxdraft}{true}}{
+	\usepackage[
+		allfiguresdraft,
+		filename,
+		size={scriptsize},
+		style={tt}
+	]{draftfigure}}{
 }
 
 % Acepta codificación UTF-8 en código fuente
@@ -4230,8 +4234,8 @@
 		Template.Licencia.Web={https://opensource.org/licenses/MIT/},
 		Template.Nombre={Template-Controles},
 		Template.Tipo={Normal},
-		Template.Version.Dev={4.1.6-CTR/EXM},
-		Template.Version.Hash={908438623210486F309693169BFF64D7},
+		Template.Version.Dev={4.1.6-1-CTR/EXM},
+		Template.Version.Hash={60094E484870CB4324DC64B3C3AC0832},
 		Template.Version.Release={4.1.6},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles/},
 		Template.Web.Manual={https://latex.ppizarror.com/controles},
