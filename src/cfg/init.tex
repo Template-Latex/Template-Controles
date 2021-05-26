@@ -1,6 +1,6 @@
 % Template:     Template Controles LaTeX
 % Documento:    Configuración inicial del template
-% Versión:      4.2.0 (17/05/2021)
+% Versión:      4.2.1 (25/05/2021)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R.
@@ -56,8 +56,9 @@
 	\def\pdfmetainfotema {\tituloevaluacion}
 	\def\pdfmetainfotitulo {\tituloevaluacion}
 	\def\pdfmetainfounidepto {\departamentouniversidad}
-	\def\pdfmetainfouninombre {\departamentouniversidad}
-	\def\pdfmetainfouniubicacion {\departamentouniversidad}
+	\def\pdfmetainfounifacultad {\nombrefacultad}
+	\def\pdfmetainfouninombre {\nombreuniversidad}
+	\def\pdfmetainfouniubicacion {\localizacionuniversidad}
 }{
 	\def\pdfmetainfoautor {}
 	\def\pdfmetainfocodigodelcurso {}
@@ -66,6 +67,7 @@
 	\def\pdfmetainfotema {}
 	\def\pdfmetainfotitulo {}
 	\def\pdfmetainfounidepto {}
+	\def\pdfmetainfounifacultad {}
 	\def\pdfmetainfouninombre {}
 	\def\pdfmetainfouniubicacion {}
 }
@@ -90,18 +92,19 @@
 		Template.Autor.Nombre={Pablo Pizarro R.},
 		Template.Autor.Web={https://ppizarror.com},
 		Template.Codificacion={UTF-8},
-		Template.Fecha={17/05/2021},
+		Template.Fecha={25/05/2021},
 		Template.Latex.Compilador={pdflatex},
 		Template.Licencia.Tipo={MIT},
 		Template.Licencia.Web={https://opensource.org/licenses/MIT},
 		Template.Nombre={Template-Controles},
 		Template.Tipo={Normal},
-		Template.Version.Dev={4.2.0-1-CTR/EXM},
-		Template.Version.Hash={54288C68593E044468A07C89FD699153},
-		Template.Version.Release={4.2.0},
+		Template.Version.Dev={4.2.1-CTR/EXM},
+		Template.Version.Hash={A2050EA40606654659DAC5DC42E15062},
+		Template.Version.Release={4.2.1},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles},
 		Template.Web.Manual={https://latex.ppizarror.com/controles},
 		Universidad.Departamento={\pdfmetainfounidepto},
+		Universidad.Facultad={\pdfmetainfounifacultad},
 		Universidad.Nombre={\pdfmetainfouninombre},
 		Universidad.Ubicacion={\pdfmetainfouniubicacion}
 	},
@@ -110,7 +113,7 @@
 	pdfmenubar={\cfgpdfmenubar},
 	pdfpagelayout={\cfgpdflayout},
 	pdfpagemode={\cfgpdfpagemode},
-	pdfproducer={Template-Controles v4.2.0 | (Pablo Pizarro R.) ppizarror.com},
+	pdfproducer={Template-Controles v4.2.1 | (Pablo Pizarro R.) ppizarror.com},
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
