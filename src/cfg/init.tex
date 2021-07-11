@@ -119,8 +119,8 @@
 		Template.Licencia.Web={https://opensource.org/licenses/MIT},
 		Template.Nombre={Template-Controles},
 		Template.Tipo={Normal},
-		Template.Version.Dev={4.2.8-CTR/EXM},
-		Template.Version.Hash={15257855CE542F262D445E55DDACA7F3},
+		Template.Version.Dev={4.2.8-1-CTR/EXM},
+		Template.Version.Hash={26A3C85C6FD0BF4A426F32C68B36FE06},
 		Template.Version.Release={4.2.8},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles},
 		Template.Web.Manual={https://latex.ppizarror.com/controles},
@@ -455,7 +455,7 @@
 \strictpagecheck
 
 % -----------------------------------------------------------------------------
-% Actualización márgen títulos
+% Actualización margen títulos
 % -----------------------------------------------------------------------------
 \titlespacing{\section}{0pt}{20pt}{10pt}
 \titlespacing{\subsection}{0pt}{15pt}{10pt}
@@ -501,14 +501,9 @@
 }
 
 % -----------------------------------------------------------------------------
-% Profundidad de las secciones
+% Crea las sub-sub-sub-secciones
 % -----------------------------------------------------------------------------
-\setcounter{secnumdepth}{4} % Límite máximo subsubsubsección
-
-% Crea las subsubsubsecciones
 \newcounter{subsubsubsection}[subsubsection]
-
-% Establece el número de las subsubsubsecciones
 \ifthenelse{\equal{\showdotaftersnum}{true}}{ % Agrega punto tras el número
 	\renewcommand{\thesubsubsubsection}{\thesubsubsection.\arabic{subsubsubsection}.}
 	\renewcommand{\theparagraph}{\thesubsubsubsection.\arabic{paragraph}.}
@@ -517,9 +512,10 @@
 	\renewcommand{\theparagraph}{\thesubsubsubsection.\arabic{paragraph}}
 }
 
-% -----------------------------------------------------------------------------
-% Agrega compatibilidad de subsubsubsecciones al TOC
-% -----------------------------------------------------------------------------
+% Límite máximo profundidad
+\setcounter{secnumdepth}{4}
+
+% Agrega compatibilidad de sub-sub-sub-secciones al TOC
 \makeatletter
 	\def\toclevel@subsubsubsection {4}
 	\def\toclevel@paragraph {5}
@@ -652,7 +648,7 @@
 % -----------------------------------------------------------------------------
 % Configuraciones del idioma
 % -----------------------------------------------------------------------------
-% Desactiva carácteres acentuados en operaciones matemáticas
+% Desactiva caracteres acentuados en operaciones matemáticas
 \unaccentedoperators
 
 % -----------------------------------------------------------------------------
