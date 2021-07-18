@@ -34,3 +34,6 @@ __MACOSX/
 # Compilados pdf
 control.pdf
 main.pdf
+
+# Otros
+.vscode
