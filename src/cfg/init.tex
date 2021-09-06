@@ -1,6 +1,6 @@
 % Template:     Controles LaTeX
 % Documento:    Configuración inicial del template
-% Versión:      4.4.1 (01/09/2021)
+% Versión:      4.4.2 (06/09/2021)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R.
@@ -18,7 +18,7 @@
 \checkvardefined{\nombredelcurso}
 \checkvardefined{\nombrefacultad}
 \checkvardefined{\nombreuniversidad}
-\checkvardefined{\tituloevaluacion}
+\checkvardefined{\titulodeldocumento}
 
 % -----------------------------------------------------------------------------
 % Se añade \xspace a las variables
@@ -31,7 +31,7 @@
 	\g@addto@macro\nombredelcurso\xspace
 	\g@addto@macro\nombrefacultad\xspace
 	\g@addto@macro\nombreuniversidad\xspace
-	\g@addto@macro\tituloevaluacion\xspace
+	\g@addto@macro\titulodeldocumento\xspace
 \makeatother
 
 % -----------------------------------------------------------------------------
@@ -70,8 +70,8 @@
 	\def\pdfmetainfoautor {\autordeldocumento}
 	\def\pdfmetainfocodigodelcurso {\codigodelcurso}
 	\def\pdfmetainfonombredelcurso {\nombredelcurso}
-	\def\pdfmetainfotema {\tituloevaluacion}
-	\def\pdfmetainfotitulo {\tituloevaluacion}
+	\def\pdfmetainfotema {\titulodeldocumento}
+	\def\pdfmetainfotitulo {\titulodeldocumento}
 	\def\pdfmetainfounidepto {\departamentouniversidad}
 	\def\pdfmetainfounifacultad {\nombrefacultad}
 	\def\pdfmetainfouninombre {\nombreuniversidad}
@@ -111,15 +111,15 @@
 		Template.Autor.Nombre={Pablo Pizarro R.},
 		Template.Autor.Web={https://ppizarror.com},
 		Template.Codificacion={UTF-8},
-		Template.Fecha={01/09/2021},
+		Template.Fecha={06/09/2021},
 		Template.Latex.Compilador={pdflatex},
 		Template.Licencia.Tipo={MIT},
 		Template.Licencia.Web={https://opensource.org/licenses/MIT},
 		Template.Nombre={Template-Controles},
 		Template.Tipo={Normal},
-		Template.Version.Dev={4.4.1-2-CTR/EXM},
-		Template.Version.Hash={840761281FFAEBEC0A3DDC319128401C},
-		Template.Version.Release={4.4.1},
+		Template.Version.Dev={4.4.2-CTR/EXM},
+		Template.Version.Hash={445CD93CC62E90B799FE83FF7802D389},
+		Template.Version.Release={4.4.2},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles},
 		Template.Web.Manual={https://latex.ppizarror.com/controles},
 		Universidad.Departamento={\pdfmetainfounidepto},
@@ -131,7 +131,7 @@
 	pdfmenubar={\cfgpdfmenubar},
 	pdfpagelayout={\cfgpdflayout},
 	pdfpagemode={\cfgpdfpagemode},
-	pdfproducer={Template-Controles v4.4.1 | (Pablo Pizarro R.) ppizarror.com},
+	pdfproducer={Template-Controles v4.4.2 | (Pablo Pizarro R.) ppizarror.com},
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
