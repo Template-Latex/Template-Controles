@@ -21,7 +21,8 @@
 \newcommand{\newboxquestion}[1]{%
 	\emptyvarerr{\newquestion}{#1}{Titulo pregunta no definido}%
 	\phantomsection%
-	\newp \fbox{\ \textbf{#1}.-\ } \noindent%
+	~\\%
+	\fbox{\ \textbf{#1}.-\ } \noindent%
 	\pdfbookmark[1]{#1}{question}%
 }
 
@@ -379,7 +380,7 @@
 	\sectionanum{#1}%
 	\vspace{-0.2cm}%
 	\textbf{#2}%
-	\newp%
+	~ \\%
 }
 
 \newcommand{\itempto}[2]{%

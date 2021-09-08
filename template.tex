@@ -2804,18 +2804,6 @@
 	\hbadness=10000 \vspace{\baselineskip} \par%
 }
 
-% Insertar párrafo
-% 	#1	Párrafo
-\newcommand{\newpar}[1]{%
-	\hbadness=10000 #1 \newp%
-}
-
-% Insertar párrafo sin nueva línea al final
-% 	#1	Párrafo
-\newcommand{\newparnl}[1]{%
-	#1 \par%
-}
-
 % Crea un salto de columna en el entorno multicol
 \newcommand{\newcolumn}{%
 	\checkinsidemulticol\vfill\null\columnbreak%
@@ -3399,7 +3387,8 @@
 \newcommand{\newboxquestion}[1]{%
 	\emptyvarerr{\newquestion}{#1}{Titulo pregunta no definido}%
 	\phantomsection%
-	\newp \fbox{\ \textbf{#1}.-\ } \noindent%
+	~\\%
+	\fbox{\ \textbf{#1}.-\ } \noindent%
 	\pdfbookmark[1]{#1}{question}%
 }
 
@@ -3757,7 +3746,7 @@
 	\sectionanum{#1}%
 	\vspace{-0.2cm}%
 	\textbf{#2}%
-	\newp%
+	~ \\%
 }
 
 \newcommand{\itempto}[2]{%
@@ -4914,8 +4903,8 @@
 	\def\pdfmetainfoauthor {\documentauthor}
 	\def\pdfmetainfocoursecode {\coursecode}
 	\def\pdfmetainfocoursename {\coursename}
+	\def\pdfmetainfosubject {\documenttitle}
 	\def\pdfmetainfotitle {\documenttitle}
-	\def\pdfmetainfotopic {\documenttitle}
 	\def\pdfmetainfouniversity {\universityname}
 	\def\pdfmetainfouniversitydepartment {\universitydepartment}
 	\def\pdfmetainfouniversityfaculty {\universityfaculty}
@@ -4926,8 +4915,8 @@
 	\def\pdfmetainfoauthor {}
 	\def\pdfmetainfocoursecode {}
 	\def\pdfmetainfocoursename {}
+	\def\pdfmetainfosubject {}
 	\def\pdfmetainfotitle {}
-	\def\pdfmetainfotopic {}
 	\def\pdfmetainfouniversity {}
 	\def\pdfmetainfouniversitydepartment {}
 	\def\pdfmetainfouniversityfaculty {}
@@ -4961,8 +4950,8 @@
 		Template.License.Web={https://opensource.org/licenses/MIT},
 		Template.Name={Template-Controles},
 		Template.Type={Normal},
-		Template.Version.Dev={4.4.3-CTR/EXM},
-		Template.Version.Hash={051EA8DE7ABCD9E56F46D1C30D8C4063},
+		Template.Version.Dev={4.4.3-1-CTR/EXM},
+		Template.Version.Hash={1459C846AFC8B503A658D411C83EDC34},
 		Template.Version.Release={4.4.3},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles},
 		Template.Web.Manual={https://latex.ppizarror.com/controles},
@@ -4979,7 +4968,7 @@
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
-	pdfsubject={\pdfmetainfotopic},
+	pdfsubject={\pdfmetainfosubject},
 	pdftitle={\pdfmetainfotitle},
 	pdftoolbar={\cfgpdftoolbar}
 }
