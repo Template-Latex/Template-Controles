@@ -1,6 +1,6 @@
 % Template:     Controles LaTeX
 % Documento:    Núcleo del template
-% Versión:      4.4.4 (09/09/2021)
+% Versión:      4.4.5 (10/09/2021)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R.
@@ -4778,6 +4778,11 @@
 %	#2	Estilo de código
 %	#3	Código a insertar
 \newcommand{\inlinesourcecodeboxed}[3][]{%
+	\emptyvarerr{\inlinesourcecodeboxed}{#2}{Estilo de codigo no definido}%
+	\emptyvarerr{\inlinesourcecodeboxed}{#3}{Codigo no definido}%
+	\lstset{%
+		basicstyle={\sourcecodeilfonts\sourcecodeilfontf\color{\maintextcolor}}%
+	}
 	\checkvalidsourcecodestyle{#2}%
 	\ifthenelse{\equal{#1}{}}{%
 		\Colorbox{\sourcecodebgcolor}{\lstinline[style=#2]!#3!}%
@@ -4787,18 +4792,21 @@
 	}{%
 		\Colorbox{#1}{\lstinline[style=#2]!#3!}%
 	}}%
+	\lstset{%
+		basicstyle={\sourcecodefonts\sourcecodefontf\color{\maintextcolor}}%
+	}
 }
 
 % Inserta una referencia en un código fuente
 % 	#1	Referencia
 \newcommand{\coderef}[1]{%
-	\ensuremath{\text{\ref{#1}}}
+	\ensuremath{\text{\ref{#1}}}%
 }
 
 % Inserta una referencia en un código fuente
 % 	#1	Referencia
 \newcommand{\codeeqref}[1]{%
-	\ensuremath{\text{(\ref{#1})}}
+	\ensuremath{\text{(\ref{#1})}}%
 }
 
 % -----------------------------------------------------------------------------
@@ -4972,16 +4980,16 @@
 		Template.Author.Email={pablo@ppizarror.com},
 		Template.Author.Web={https://ppizarror.com},
 		Template.Author={Pablo Pizarro R.},
-		Template.Date={09/09/2021},
+		Template.Date={10/09/2021},
 		Template.Encoding={UTF-8},
 		Template.Latex.Compiler={pdflatex},
 		Template.License.Type={MIT},
 		Template.License.Web={https://opensource.org/licenses/MIT},
 		Template.Name={Template-Controles},
 		Template.Type={Normal},
-		Template.Version.Dev={4.4.4-CTR/EXM},
-		Template.Version.Hash={D7D0A4A4A4C3C68AEF044D81E26FAA6B},
-		Template.Version.Release={4.4.4},
+		Template.Version.Dev={4.4.5-CTR/EXM},
+		Template.Version.Hash={ED871B8EE9FAFF813226B184F6065B83},
+		Template.Version.Release={4.4.5},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles},
 		Template.Web.Manual={https://latex.ppizarror.com/controles},
 		University.Department={\pdfmetainfouniversitydepartment},
@@ -4993,7 +5001,7 @@
 	pdfmenubar={\cfgpdfmenubar},
 	pdfpagelayout={\cfgpdflayout},
 	pdfpagemode={\cfgpdfpagemode},
-	pdfproducer={Template-Controles v4.4.4 | (Pablo Pizarro R.) ppizarror.com},
+	pdfproducer={Template-Controles v4.4.5 | (Pablo Pizarro R.) ppizarror.com},
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
