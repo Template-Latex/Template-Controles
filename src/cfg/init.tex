@@ -1,6 +1,6 @@
 % Template:     Control LaTeX
 % Documento:    Configuración inicial del template
-% Versión:      4.5.4 (06/10/2021)
+% Versión:      4.5.5 (06/10/2021)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R.
@@ -111,9 +111,9 @@
 		Template.License.Web={https://opensource.org/licenses/MIT},
 		Template.Name={Template-Controles},
 		Template.Type={Normal},
-		Template.Version.Dev={4.5.4-CTR/EXM},
-		Template.Version.Hash={9EFEA73178349167798F162C81D597D7},
-		Template.Version.Release={4.5.4},
+		Template.Version.Dev={4.5.5-CTR/EXM},
+		Template.Version.Hash={B2998BA9804A9BBA0B0AD37B10514869},
+		Template.Version.Release={4.5.5},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles},
 		Template.Web.Manual={https://latex.ppizarror.com/controles},
 		University.Department={\pdfmetainfouniversitydepartment},
@@ -125,7 +125,7 @@
 	pdfmenubar={\cfgpdfmenubar},
 	pdfpagelayout={\cfgpdflayout},
 	pdfpagemode={\cfgpdfpagemode},
-	pdfproducer={Template-Controles v4.5.4 | (Pablo Pizarro R.) ppizarror.com},
+	pdfproducer={Template-Controles v4.5.5 | (Pablo Pizarro R.) ppizarror.com},
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
@@ -688,6 +688,26 @@
 \theoremstyle{miobs}
 \newtheorem*{ej}{\namemathej}
 \newtheorem*{obs}{\namemathobs}
+
+% -----------------------------------------------------------------------------
+% Configura el formato oneside/twoside
+% -----------------------------------------------------------------------------
+% Normaliza el formato de páginas
+\raggedbottom
+
+% Desactiva \cleardoublepage hasta el inicio del documento
+\let\oldcleardoublepage\cleardoublepage
+\let\cleardoublepage\clearpage
+
+% Modifica el formato de nuevas páginas predoc y \cleardoublepage 
+\ifthenelse{\equal{\twopagesclearformat}{blank}}{
+	\let\emptypagespredocformat\insertblankpage
+}{
+\ifthenelse{\equal{\twopagesclearformat}{empty}}{
+	\let\emptypagespredocformat\insertemptypage
+}{
+	\throwbadconfig{Valor configuracion incorrecto}{\twopagesclearformat}{blank,empty}}
+}
 
 % -----------------------------------------------------------------------------
 % Configuraciones del idioma
