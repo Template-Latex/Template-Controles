@@ -1,6 +1,6 @@
 % Template:     Control LaTeX
 % Documento:    Configuración inicial del template
-% Versión:      4.5.3 (02/10/2021)
+% Versión:      4.5.4 (06/10/2021)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R.
@@ -104,16 +104,16 @@
 		Template.Author.Email={pablo@ppizarror.com},
 		Template.Author.Web={https://ppizarror.com},
 		Template.Author={Pablo Pizarro R.},
-		Template.Date={02/10/2021},
+		Template.Date={06/10/2021},
 		Template.Encoding={UTF-8},
 		Template.Latex.Compiler={pdflatex},
 		Template.License.Type={MIT},
 		Template.License.Web={https://opensource.org/licenses/MIT},
 		Template.Name={Template-Controles},
 		Template.Type={Normal},
-		Template.Version.Dev={4.5.3-CTR/EXM},
-		Template.Version.Hash={A1AD4E4BBFEE8FF5E369BC409F76CE91},
-		Template.Version.Release={4.5.3},
+		Template.Version.Dev={4.5.4-CTR/EXM},
+		Template.Version.Hash={9EFEA73178349167798F162C81D597D7},
+		Template.Version.Release={4.5.4},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles},
 		Template.Web.Manual={https://latex.ppizarror.com/controles},
 		University.Department={\pdfmetainfouniversitydepartment},
@@ -125,7 +125,7 @@
 	pdfmenubar={\cfgpdfmenubar},
 	pdfpagelayout={\cfgpdflayout},
 	pdfpagemode={\cfgpdfpagemode},
-	pdfproducer={Template-Controles v4.5.3 | (Pablo Pizarro R.) ppizarror.com},
+	pdfproducer={Template-Controles v4.5.4 | (Pablo Pizarro R.) ppizarror.com},
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
@@ -465,11 +465,6 @@
 \makeatother
 
 % -----------------------------------------------------------------------------
-% Se activa el modo estricto de revisión de números de página
-% -----------------------------------------------------------------------------
-\strictpagecheck
-
-% -----------------------------------------------------------------------------
 % Se activa el word-wrap para textos con \texttt{}
 % -----------------------------------------------------------------------------
 \ttfamily \hyphenchar\the\font=`\-
@@ -505,6 +500,11 @@
 }{
 	\throwbadconfig{Compilador desconocido}{\compilertype}{pdf2latex,xelatex,lualatex}}}
 }
+
+% -----------------------------------------------------------------------------
+% Declaración caracteres unicode adicionales
+% -----------------------------------------------------------------------------
+\DeclareUnicodeCharacter{2212}{-}
 
 % -----------------------------------------------------------------------------
 % Crea las sub-sub-sub-secciones
