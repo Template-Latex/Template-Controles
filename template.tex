@@ -2127,7 +2127,7 @@
 %	#4	Link de la imagen
 %	#5	Leyenda de la imagen (opcional)
 \newcommand{\addimagelink}[5][]{%
-	\addimageboxedlink[#1]{#2}{#3}{0}{#4}{#5}%
+	\addimagelinkboxed[#1]{#2}{#3}{0}{#4}{#5}%
 }
 
 % Añade una imagen a un env "image" con borde
@@ -2137,7 +2137,7 @@
 %	#4	Ancho de la línea (en pt)
 %	#5	Link de la imagen
 %	#6	Leyenda de la imagen (opcional)
-\newcommand{\addimageboxedlink}[6][]{%
+\newcommand{\addimagelinkboxed}[6][]{%
 	\global\def\GLOBALimagelink {#5}%
 	\addimageboxed[#1]{#2}{#3}{#4}{#6}%
 	\global\def\GLOBALimagelink {}%
@@ -2156,8 +2156,8 @@
 %	#2	Parámetros de la imagen
 %	#3	Ancho de la línea (en pt)
 %	#4	Link de la imagen
-\newcommand{\addimageanumboxedlink}[4]{%
-	\addimageboxedlink{#1}{#2}{#3}{#4}{}%
+\newcommand{\addimageanumlinkboxed}[4]{%
+	\addimagelinkboxed{#1}{#2}{#3}{#4}{}%
 }
 
 % Añade un salto de línea en las imágenes
@@ -5270,8 +5270,8 @@
 		Template.License.Web={https://opensource.org/licenses/MIT},
 		Template.Name={Template-Controles},
 		Template.Type={Normal},
-		Template.Version.Dev={4.5.7-CTR/EXM},
-		Template.Version.Hash={F062198FCFE1ECD81CE66E43C0040EB3},
+		Template.Version.Dev={4.5.7-1-CTR/EXM},
+		Template.Version.Hash={79F582629CDD660916C67457CD3B2652},
 		Template.Version.Release={4.5.7},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles},
 		Template.Web.Manual={https://latex.ppizarror.com/controles},
