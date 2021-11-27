@@ -1,6 +1,6 @@
 % Template:     Control LaTeX
 % Documento:    Núcleo del template
-% Versión:      5.0.4 (26/11/2021)
+% Versión:      5.0.5 (27/11/2021)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R.
@@ -3008,7 +3008,7 @@
 \def\corecheckchapterinitialized {%
 	\ifthenelse{\equal{\GLOBALtitlerequirechapter}{true}}{%
 		\ifthenelse{\equal{\GLOBALtitleinitchapter}{false}}{%
-			\throwwarning{Se requiere un nuevo capitulo para iniciar las secciones}%
+			\throwwarning{Se requiere un nuevo capitulo}%
 		}{}%
 	}{}%
 }
@@ -5477,16 +5477,16 @@
 		Template.Author.Email={pablo@ppizarror.com},
 		Template.Author.Web={https://ppizarror.com},
 		Template.Author={Pablo Pizarro R.},
-		Template.Date={26/11/2021},
+		Template.Date={27/11/2021},
 		Template.Encoding={UTF-8},
 		Template.Latex.Compiler={pdflatex},
 		Template.License.Type={MIT},
 		Template.License.Web={https://opensource.org/licenses/MIT},
 		Template.Name={Template-Controles},
 		Template.Type={Normal},
-		Template.Version.Dev={5.0.4-CTR/EXM},
-		Template.Version.Hash={D553F8DAEB150E87C7198CB2A84EBDF4},
-		Template.Version.Release={5.0.4},
+		Template.Version.Dev={5.0.5-CTR/EXM},
+		Template.Version.Hash={A12D88B1D7B3B2DF966B96411FDB786F},
+		Template.Version.Release={5.0.5},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles},
 		Template.Web.Manual={https://latex.ppizarror.com/controles},
 		University.Department={\pdfmetainfouniversitydepartment},
@@ -5498,7 +5498,7 @@
 	pdfmenubar={\cfgpdfmenubar},
 	pdfpagelayout={\cfgpdflayout},
 	pdfpagemode={\cfgpdfpagemode},
-	pdfproducer={Template-Controles v5.0.4 | (Pablo Pizarro R.) ppizarror.com},
+	pdfproducer={Template-Controles v5.0.5 | (Pablo Pizarro R.) ppizarror.com},
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
@@ -7291,5 +7291,15 @@
 	% Establece el estilo de las sub-sub-sub-secciones
 	% -----------------------------------------------------------------------------
 	\titleclass{\subsubsubsection}{straight}[\subsection]
+
+	% -------------------------------------------------------------------------
+	% Reestablece los valores del estado de los títulos
+	% -------------------------------------------------------------------------
+	\global\def\GLOBALtitlerequirechapter {false}
+	\global\def\GLOBALtitleinitchapter {false}
+	\global\def\GLOBALtitleinitsection {false}
+	\global\def\GLOBALtitleinitsubsection {false}
+	\global\def\GLOBALtitleinitsubsubsection {false}
+	\global\def\GLOBALtitleinitsubsubsubsection {false}
 
 }
