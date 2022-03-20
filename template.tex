@@ -1,6 +1,6 @@
 % Template:     Control LaTeX
 % Documento:    Núcleo del template
-% Versión:      5.0.8 (10/01/2022)
+% Versión:      5.0.9 (19/03/2022)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R.
@@ -2979,6 +2979,16 @@
 \global\def\GLOBALtitleinitsubsubsection {false}
 \global\def\GLOBALtitleinitsubsubsubsection {false}
 
+% Configura textos a añadir antes de secciones
+\global\def\GLOBALtitleprechapterstr {}
+\global\def\GLOBALtitlepresectionstr {}
+\global\def\GLOBALtitlepresubsectionstr {}
+\global\def\GLOBALtitlepresubsubsectionstr {}
+\global\def\GLOBALtitlepresubsubsubsectionstr {}
+
+% Configura que entornos pueden funcionar
+\global\def\GLOBALtitlechapterenabled {false}
+
 % Activa la numeración en las secciones
 \def\coreintializetitlenumbering {%
 	% Capítulo
@@ -3058,6 +3068,9 @@
 
 % Parcha el formato de capítulos
 \pretocmd{\chapter}{%
+	\ifthenelse{\equal{\GLOBALtitlechapterenabled}{false}}{ % Verifica que el entorno esté activo
+		\throwwarning{La insercion de capitulos esta desactivada}%
+	}{%
 	\ifthenelse{\equal{\showsectioncaptioncode}{chap}}{ % Reinicia código fuente
 		\addtocounter{templateListings}{\value{lstlisting}}%
 		\setcounter{lstlisting}{0}%
@@ -3088,6 +3101,7 @@
 	\global\def\GLOBALtitleinitsubsubsection {false}%
 	\global\def\GLOBALtitleinitsubsubsubsection {false}%
 	\coreintializetitlenumbering%
+	}%
 }{}{}
 
 % Parcha el formato de secciones al pasar desde una anum, vuelve a activar número
@@ -3218,6 +3232,25 @@
 	\corechecksectioninitialized%
 	\corechecksubsectioninitialized%
 	\corechecksubsubsectioninitialized%
+}
+
+% Insertar un capítulo sin número
+% 	#1	Título
+\newcommand{\chapteranum}[1]{%
+	\ifthenelse{\equal{\GLOBALtitlechapterenabled}{false}}{ % Verifica que el entorno esté activo
+		\throwwarning{La insercion de capitulos esta desactivada}%
+	}{%
+	\emptyvarerr{\chapteranum}{#1}{Titulo no definido}%
+	\phantomsection%
+	\needspace{3\baselineskip}%
+	\chapter*{#1}%
+	\addcontentsline{toc}{chapter}{#1}%
+	\ifthenelse{\equal{\anumsecaddtocounter}{true}}{\stepcounter{chapter}}{}%
+	\changeheadertitle{#1}%
+	\setcounter{section}{0}%
+	\global\def\GLOBALchapternumenabled {false}%
+	\coreintializetitlenumbering%
+	}%
 }
 
 % Insertar un título sin número
@@ -5499,16 +5532,16 @@
 		Template.Author.Email={pablo@ppizarror.com},
 		Template.Author.Web={https://ppizarror.com},
 		Template.Author={Pablo Pizarro R.},
-		Template.Date={10/01/2022},
+		Template.Date={19/03/2022},
 		Template.Encoding={UTF-8},
 		Template.Latex.Compiler={pdflatex},
 		Template.License.Type={MIT},
 		Template.License.Web={https://opensource.org/licenses/MIT},
 		Template.Name={Template-Controles},
 		Template.Type={Normal},
-		Template.Version.Dev={5.0.8-1-CTR/EXM},
-		Template.Version.Hash={3BEECE1E8F1B9E7385137050CF393B4D},
-		Template.Version.Release={5.0.8},
+		Template.Version.Dev={5.0.9-1-CTR/EXM},
+		Template.Version.Hash={E3FCF9731D800A6C28ED681C0C107164},
+		Template.Version.Release={5.0.9},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles},
 		Template.Web.Manual={https://latex.ppizarror.com/controles},
 		University.Department={\pdfmetainfouniversitydepartment},
@@ -5520,7 +5553,7 @@
 	pdfmenubar={\cfgpdfmenubar},
 	pdfpagelayout={\cfgpdflayout},
 	pdfpagemode={\cfgpdfpagemode},
-	pdfproducer={Template-Controles v5.0.8 | (Pablo Pizarro R.) ppizarror.com},
+	pdfproducer={Template-Controles v5.0.9 | (Pablo Pizarro R.) ppizarror.com},
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
@@ -5935,9 +5968,9 @@
 	{\csname #1@cntformat\endcsname} % Control individual
 }
 % Configura secciones
-\newcommand\section@cntformat{\thesection\charaftersectionnum\spacingaftersection}
-\newcommand\subsection@cntformat{\thesubsection\charaftersectionnum\spacingaftersection}
-\newcommand\subsubsection@cntformat{\thesubsubsection\charaftersectionnum\spacingaftersection}
+\newcommand\section@cntformat{\GLOBALtitlepresectionstr\thesection\charaftersectionnum\spacingaftersection}
+\newcommand\subsection@cntformat{\GLOBALtitlepresubsectionstr\thesubsection\charaftersectionnum\spacingaftersection}
+\newcommand\subsubsection@cntformat{\GLOBALtitlepresubsubsectionstr\thesubsubsection\charaftersectionnum\spacingaftersection}
 \makeatother
 
 % -----------------------------------------------------------------------------
@@ -6254,6 +6287,7 @@
 
 % Agrega caracteres unicode
 \ifdefined\DeclareUnicodeCharacter
+\DeclareUnicodeCharacter{000B}{~}
 \DeclareUnicodeCharacter{00A0}{~}
 \DeclareUnicodeCharacter{00A1}{\textexclamdown}
 \DeclareUnicodeCharacter{00A2}{\textcent}
@@ -7217,7 +7251,7 @@
 	\titleformat{\subsubsubsection}{%
 		\color{\ssssectioncolor} \ssssectionfontsz \ssssectionfontstyle%
 	}{%
-		\thesubsubsubsection\charaftersectionnum\spacingaftersection%
+		\GLOBALtitlepresubsubsubsectionstr\thesubsubsubsection\charaftersectionnum\spacingaftersection%
 		\corepatchaftersubsubsubsection%
 	}{0em}{%
 	}
