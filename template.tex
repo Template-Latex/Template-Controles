@@ -1,6 +1,6 @@
 % Template:     Control LaTeX
 % Documento:    Núcleo del template
-% Versión:      5.1.3 (04/06/2022)
+% Versión:      5.1.4 (09/06/2022)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R.
@@ -2988,7 +2988,7 @@
 \global\def\GLOBALtitlepresubsubsubsectionstr {}
 
 % Configura que entornos pueden funcionar
-\global\def\GLOBALtitlechapterenabled {false}
+\global\def\GLOBALtitlechapterenabled {true}
 
 % Activa la numeración en las secciones
 \def\coreintializetitlenumbering {%
@@ -3974,6 +3974,14 @@
 	\newp \fbox{\ \textbf{#1}.-\ } \noindent%
 	\pdfbookmark{#1}{question.\thetotalquestions}%
 	\stepcounter{totalquestions}%
+}
+
+% Crea un entorno para definir el tamaño de bloque
+%	#1	Tamaño de fuente en pt
+\newenvironment{fontsizeblock}[1][\documentfontsize]{
+	\changefontsizes{#1 pt}
+}{
+	\changefontsizes{\documentfontsize pt}
 }
 
 % Crea una sección de imágenes múltiples
@@ -5564,16 +5572,16 @@
 		Template.Author.Email={pablo@ppizarror.com},
 		Template.Author.Web={https://ppizarror.com},
 		Template.Author={Pablo Pizarro R.},
-		Template.Date={04/06/2022},
+		Template.Date={09/06/2022},
 		Template.Encoding={UTF-8},
 		Template.Latex.Compiler={pdflatex},
 		Template.License.Type={MIT},
 		Template.License.Web={https://opensource.org/licenses/MIT},
 		Template.Name={Template-Controles},
 		Template.Type={Normal},
-		Template.Version.Dev={5.1.3-CTR/EXM},
-		Template.Version.Hash={BD7D871B055A180F10CFBAC4FDC9C373},
-		Template.Version.Release={5.1.3},
+		Template.Version.Dev={5.1.4-1-CTR/EXM},
+		Template.Version.Hash={670F8D149FDAA74CC22CA609162AF86B},
+		Template.Version.Release={5.1.4},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles},
 		Template.Web.Manual={https://latex.ppizarror.com/controles},
 		University.Department={\pdfmetainfouniversitydepartment},
@@ -5585,7 +5593,7 @@
 	pdfmenubar={\cfgpdfmenubar},
 	pdfpagelayout={\cfgpdflayout},
 	pdfpagemode={\cfgpdfpagemode},
-	pdfproducer={Template-Controles v5.1.3 | (Pablo Pizarro R.) ppizarror.com},
+	pdfproducer={Template-Controles v5.1.4 | (Pablo Pizarro R.) ppizarror.com},
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
