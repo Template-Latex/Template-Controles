@@ -1,6 +1,6 @@
 % Template:     Control LaTeX
 % Documento:    Núcleo del template
-% Versión:      5.2.4 (06/07/2023)
+% Versión:      5.2.5 (21/08/2023)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R.
@@ -233,7 +233,7 @@
 
 % Dimensiones y geometría del documento
 \ifthenelse{\equal{\compilertype}{lualatex}}{ % En lualatex sólo se puede cambiar 1 vez el margen
-	\usepackage[top=\pagemargintop cm,bottom=\pagemarginbottom cm,left=\pagemarginleft cm,right=\pagemarginright cm]{geometry}
+	\usepackage[top=\pagemargintop cm,bottom=\pagemarginbottom cm,left=\pagemarginleft cm,right=\pagemarginright cm, footnotesep=\footnotetopmargin cm]{geometry}
 }{ % pdf2latex, xelatex
 	\usepackage{geometry}
 }
@@ -1012,7 +1012,7 @@
 	\ifthenelse{\equal{\compilertype}{lualatex}}{
 		% Geometry no válido en lualatex
 	}{
-		\newgeometry{left=#1cm, top=#2cm, right=#3cm, bottom=#4cm}
+		\newgeometry{left=#1cm, top=#2cm, right=#3cm, bottom=#4cm, footnotesep=\footnotetopmargin cm}
 	}
 }
 
@@ -5594,16 +5594,16 @@
 		Template.Author.Email={pablo@ppizarror.com},
 		Template.Author.Web={https://ppizarror.com},
 		Template.Author={Pablo Pizarro R.},
-		Template.Date={06/07/2023},
+		Template.Date={21/08/2023},
 		Template.Encoding={UTF-8},
 		Template.Latex.Compiler={pdflatex},
 		Template.License.Type={MIT},
 		Template.License.Web={https://opensource.org/licenses/MIT},
 		Template.Name={Template-Controles},
 		Template.Type={Normal},
-		Template.Version.Dev={5.2.4-4-CTR/EXM},
-		Template.Version.Hash={751DB5008610EEE9C102A71508FED1CA},
-		Template.Version.Release={5.2.4},
+		Template.Version.Dev={5.2.5-CTR/EXM},
+		Template.Version.Hash={C2B47EC7A1DFAC13122E006DABA1BDCA},
+		Template.Version.Release={5.2.5},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles},
 		Template.Web.Manual={https://latex.ppizarror.com/controles},
 		University.Department={\pdfmetainfouniversitydepartment},
@@ -5615,7 +5615,7 @@
 	pdfmenubar={\cfgpdfmenubar},
 	pdfpagelayout={\cfgpdflayout},
 	pdfpagemode={\cfgpdfpagemode},
-	pdfproducer={Template-Controles v5.2.4 | (Pablo Pizarro R.) ppizarror.com},
+	pdfproducer={Template-Controles v5.2.5 | (Pablo Pizarro R.) ppizarror.com},
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
