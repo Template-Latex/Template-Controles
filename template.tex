@@ -1,6 +1,6 @@
 % Template:     Control LaTeX
 % Documento:    Núcleo del template
-% Versión:      5.2.8 (04/11/2023)
+% Versión:      5.2.9 (06/11/2023)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R.
@@ -83,6 +83,23 @@
 
 % Carga el idioma
 \usepackage{tracklang}
+\ifthenelse{\equal{\stylecitereferences}{natbib}}{% Formato citas natbib
+	\usepackage[nottoc,notlof,notlot]{tocbibind}
+	\ifthenelse{\equal{\natbibrefcitecompress}{true}}{
+		\usepackage[sort&compress]{natbib}
+	}{
+		\usepackage{natbib}
+	}
+}{
+\ifthenelse{\equal{\stylecitereferences}{apacite}}{% Formato citas apacite
+	\usepackage[nottoc,notlof,notlot]{tocbibind}
+	\usepackage{apacite}
+}{
+\ifthenelse{\equal{\stylecitereferences}{bibtex}}{% Formato citas bibtex
+}{
+\ifthenelse{\equal{\stylecitereferences}{custom}}{% Formato citas custom
+}{}}}
+}
 \IfTrackedLanguage{spanish}{
 	\usepackage[es-nosectiondot,es-lcroman,es-noquoting]{babel}
 }{% english, otros
@@ -223,23 +240,6 @@
 	\usepackage[pdfencoding=auto,psdextra,backref=page]{hyperref} % Enlaces, referencias
 }{
 	\usepackage[pdfencoding=auto,psdextra]{hyperref} % Enlaces, referencias
-}
-\ifthenelse{\equal{\stylecitereferences}{natbib}}{% Formato citas natbib
-	\usepackage[nottoc,notlof,notlot]{tocbibind}
-	\ifthenelse{\equal{\natbibrefcitecompress}{true}}{
-		\usepackage[sort&compress]{natbib}
-	}{
-		\usepackage{natbib}
-	}
-}{
-\ifthenelse{\equal{\stylecitereferences}{apacite}}{% Formato citas apacite
-	\usepackage[nottoc,notlof,notlot]{tocbibind}
-	\usepackage{apacite}
-}{
-\ifthenelse{\equal{\stylecitereferences}{bibtex}}{% Formato citas bibtex
-}{
-\ifthenelse{\equal{\stylecitereferences}{custom}}{% Formato citas custom
-}{}}}
 }
 
 % Anexos/Apéndices
@@ -5596,16 +5596,16 @@
 		Template.Author.Email={pablo@ppizarror.com},
 		Template.Author.Web={https://ppizarror.com},
 		Template.Author={Pablo Pizarro R.},
-		Template.Date={04/11/2023},
+		Template.Date={06/11/2023},
 		Template.Encoding={UTF-8},
 		Template.Latex.Compiler={pdflatex},
 		Template.License.Type={MIT},
 		Template.License.Web={https://opensource.org/licenses/MIT},
 		Template.Name={Template-Controles},
 		Template.Type={Normal},
-		Template.Version.Dev={5.2.8-CTR/EXM},
-		Template.Version.Hash={23E85FAE25A34F76C716E571CEA50AFD},
-		Template.Version.Release={5.2.8},
+		Template.Version.Dev={5.2.9-1-CTR/EXM},
+		Template.Version.Hash={0C228CD97A7E0A6D498DED55D2604147},
+		Template.Version.Release={5.2.9},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles},
 		Template.Web.Manual={https://latex.ppizarror.com/controles},
 		University.Department={\pdfmetainfouniversitydepartment},
@@ -5617,7 +5617,7 @@
 	pdfmenubar={\cfgpdfmenubar},
 	pdfpagelayout={\cfgpdflayout},
 	pdfpagemode={\cfgpdfpagemode},
-	pdfproducer={Template-Controles v5.2.8 | (Pablo Pizarro R.) ppizarror.com},
+	pdfproducer={Template-Controles v5.2.9 | (Pablo Pizarro R.) ppizarror.com},
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
