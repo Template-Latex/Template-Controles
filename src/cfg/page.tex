@@ -1,6 +1,6 @@
 % Template:     Control LaTeX
 % Documento:    Configuración de página
-% Versión:      5.4.1 (07/06/2026)
+% Versión:      5.4.2 (02/07/2026)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R.
@@ -265,7 +265,7 @@
 	% -----------------------------------------------------------------------------
 	\fancyheadoffset{0pt}
 	\pagestyle{fancy}
-	\newcommand{\COREstyledefinition}{%
+	\newcommand{\corestyledefinition}{%
 		\fancyhf{} % Headers y footers
 		\fancyhead[L]{}
 		\fancyhead[R]{}
@@ -274,7 +274,7 @@
 		\fancyfoot[R]{\small \rm \nouppercase{\thepage}} % Footer der, curso
 		\renewcommand{\footrulewidth}{0.5pt} % Ancho de la barra del footer
 	}
-	\COREstyledefinition
+	\corestyledefinition
 	\fancypagestyle{styleportrait}{% Estilo portada
 		\pagestyle{fancy}
 		\fancyhf{}
@@ -325,7 +325,7 @@
 	% Aplica el estilo de página
 	\fancypagestyle{plain}{%
 		\fancyheadoffset{0pt}
-		\COREstyledefinition
+		\corestyledefinition
 	}
 	% Define estilos por defecto en flotantes
 	\floatpagestyle{plain}

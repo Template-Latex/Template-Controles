@@ -1,6 +1,6 @@
 % Template:     Control LaTeX
 % Documento:    Núcleo del template
-% Versión:      5.4.1 (07/06/2026)
+% Versión:      5.4.2 (02/07/2026)
 % Codificación: UTF-8
 %
 % Autor: Pablo Pizarro R.
@@ -45,8 +45,21 @@
 \let\IM\Im
 
 % Parches de librerías
-\let\counterwithout\relax
-\let\counterwithin\relax
+\newcommand{\corepatchatleast}[2]{
+	\ifdefined\IfFormatAtLeastTF
+		\IfFormatAtLeastTF{#1}{}{#2}%
+	\else
+		#2
+	\fi
+}
+% Desde LaTeX 2025-06-01 amsmath define \numberwithin como copia de \counterwithin;
+% borrar \counterwithin deja \numberwithin indefinido y rompe el hook de hyperref
+% ("Command \numberwithin undefined"). Se aplica el parche solo en formatos
+% anteriores a 2025-06-01, donde amsmath aún define \numberwithin de forma propia.
+\corepatchatleast{2025-06-01}{
+	\let\counterwithout\relax
+	\let\counterwithin\relax
+}
 \let\underbar\relax
 \let\underline\relax
 
@@ -4133,10 +4146,15 @@
 	\global\def\GLOBALtitleinitsubsubsection {false}%
 	\global\def\GLOBALtitleinitsubsubsubsection {false}%
 	\bookmarksetupnext{level={\thetemplateBookmarksLevelPrev}} % Restablece índice marcador
-	\bookmarksetup{%
-		numbered={\cfgpdfsecnumbookmarks},
-		openlevel={\cfgbookmarksopenlevel}
-	}%
+	% bookmark valida 'numbered' como booleano literal (true/false), no una macro:
+	% se expanden los valores antes de pasarlos a \bookmarksetup.
+	\begingroup
+	\edef\x{\endgroup
+		\noexpand\bookmarksetup{%
+			numbered={\cfgpdfsecnumbookmarks},%
+			openlevel={\cfgbookmarksopenlevel}%
+		}%
+	}\x%
 	\endgroup%
 	\global\def\GLOBALenvappendix {false}%
 	\global\def\GLOBALtitlerequirechapter {false}%
@@ -5628,8 +5646,6 @@
 }
 \hypersetup{
 	keeppdfinfo,
-	bookmarksopen={\cfgpdfbookmarkopen},
-	bookmarksopenlevel={\cfgbookmarksopenlevel},
 	bookmarkstype={toc},
 	pdfauthor={\pdfmetainfoauthor},
 	pdfcenterwindow={\cfgpdfcenterwindow},
@@ -5647,16 +5663,16 @@
 		Template.Author.Email={pablo@ppizarror.com},
 		Template.Author.Web={https://ppizarror.com},
 		Template.Author={Pablo Pizarro R.},
-		Template.Date={07/06/2026},
+		Template.Date={02/07/2026},
 		Template.Encoding={UTF-8},
 		Template.Latex.Compiler={pdflatex},
 		Template.License.Type={MIT},
 		Template.License.Web={https://opensource.org/licenses/MIT},
 		Template.Name={Template-Controles},
 		Template.Type={Normal},
-		Template.Version.Dev={5.4.1-CTR/EXM},
-		Template.Version.Hash={726FA2FBE796AA3A2977B494EC2BC1AF},
-		Template.Version.Release={5.4.1},
+		Template.Version.Dev={5.4.2-CTR/EXM},
+		Template.Version.Hash={8489F860F95BB243F74F684F8A993099},
+		Template.Version.Release={5.4.2},
 		Template.Web.Dev={https://github.com/Template-Latex/Template-Controles},
 		Template.Web.Manual={https://template-latex.github.io/controles},
 		University.Department={\pdfmetainfouniversitydepartment},
@@ -5668,7 +5684,7 @@
 	pdfmenubar={\cfgpdfmenubar},
 	pdfpagelayout={\cfgpdflayout},
 	pdfpagemode={\cfgpdfpagemode},
-	pdfproducer={Template-Controles v5.4.1 | (Pablo Pizarro R.) ppizarror.com},
+	pdfproducer={Template-Controles v5.4.2 | (Pablo Pizarro R.) ppizarror.com},
 	pdfremotestartview={Fit},
 	pdfstartpage={1},
 	pdfstartview={\cfgpdfpageview},
@@ -5676,6 +5692,16 @@
 	pdftitle={\pdfmetainfotitle},
 	pdftoolbar={\cfgpdftoolbar}
 }
+% El paquete bookmark (TeX Live 2026) reenvía el valor de bookmarksopen sin
+% expandir a su clave booleana 'open', que solo acepta true/false literales.
+% Se expanden los valores de configuración antes de pasarlos a \hypersetup.
+\begingroup
+\edef\x{\endgroup
+	\noexpand\hypersetup{%
+		bookmarksopen={\cfgpdfbookmarkopen},%
+		bookmarksopenlevel={\cfgbookmarksopenlevel}%
+	}%
+}\x
 
 % -----------------------------------------------------------------------------
 % Establece la carpeta de imágenes por defecto
@@ -6635,7 +6661,7 @@
 	% -----------------------------------------------------------------------------
 	\fancyheadoffset{0pt}
 	\pagestyle{fancy}
-	\newcommand{\COREstyledefinition}{%
+	\newcommand{\corestyledefinition}{%
 		\fancyhf{} % Headers y footers
 		\fancyhead[L]{}
 		\fancyhead[R]{}
@@ -6644,7 +6670,7 @@
 		\fancyfoot[R]{\small \rm \nouppercase{\thepage}} % Footer der, curso
 		\renewcommand{\footrulewidth}{0.5pt} % Ancho de la barra del footer
 	}
-	\COREstyledefinition
+	\corestyledefinition
 	\fancypagestyle{styleportrait}{% Estilo portada
 		\pagestyle{fancy}
 		\fancyhf{}
@@ -6695,7 +6721,7 @@
 	% Aplica el estilo de página
 	\fancypagestyle{plain}{%
 		\fancyheadoffset{0pt}
-		\COREstyledefinition
+		\corestyledefinition
 	}
 	% Define estilos por defecto en flotantes
 	\floatpagestyle{plain}
